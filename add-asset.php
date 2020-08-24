@@ -1,10 +1,45 @@
 <?php
 
+require_once 'dbcon.php';
+
 session_start();
 
 if (!isset($_SESSION['user_login'])){
     header('location: pages_sign-in.php');
 }
+
+if(isset($_POST['add_asset'])){
+    $Date = $_POST['Date'];
+    $Incident = $_POST['Incident'];
+    $Location = $_POST['Location'];
+    $Status = $_POST['Status'];
+
+    $input_error = array();
+    if(empty($Date)) {
+        $input_error['Date'] = "Enter Receive Date!";
+    }
+    if(empty($Incident)) {
+        $input_error['Incident'] = "Enter Incident Number!";
+    }
+    if(empty($Location)) {
+        $input_error['Location'] = "Enter Branch or ATM Location!";
+    }
+    if(empty($Status)) {
+        $input_error['Status'] = "Enter Issue Status!";
+    }
+    if (count($input_error) == 0) {
+        //$password_hash = password_hash($password, PASSWORD_DEFAULT);
+        $result = mysqli_query($con,"INSERT INTO add_asset(Date, Incident, Location, Status) VALUES ( '$Date', '$Incident', '$Location', '$Status')");
+        if ($result){
+            $success = "Data added successfully!";
+        }else {
+            $error = "Something Wrong!";
+        }
+    }
+
+}
+mysqli_close($con);
+
 
 ?>
 
@@ -214,32 +249,58 @@ if (!isset($_SESSION['user_login'])){
                             <div class="panel-content">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <form class="form-horizontal">
+                                        <form class="form-horizontal" method="POST" action="<?= $_SERVER['PHP_SELF'] ?>">
                                             <h5 class="mb-lg">3kVA Online UPS Issue!</h5>
                                             <div class="form-group">
                                                 <label for="default-datepicker" class="col-sm-2 control-label ">Date</label>
                                                 <div class="col-sm-5">
                                                     <div class="input-group">
                                                         <span class="input-group-addon x-primary"><i class="fa fa-calendar"></i></span>
-                                                        <input type="text" class="form-control" id="default-datepicker">
+                                                        <input type="text" name="Date" class="form-control" id="default-datepicker">
+                                                        <?php
+                                                        if (isset($input_error['Date'])) {
+                                                            echo '<span class="input-error">'.$input_error['Date'].'</span>';
+                                                        }
+                                                        ?>
                                                     </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email2" class="col-sm-2 control-label">Incident No</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" name="Incident" class="form-control" id="email2" placeholder="Incident Number">
+                                                    <?php
+                                                    if (isset($input_error['Incident'])) {
+                                                        echo '<span class="input-error">'.$input_error['Incident'].'</span>';
+                                                    }
+                                                    ?>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="email2" class="col-sm-2 control-label">Location</label>
                                                 <div class="col-sm-10">
-                                                    <input type="email" class="form-control" id="email2" placeholder="Email">
+                                                    <input type="text" name="Location" class="form-control" id="email2" placeholder="ATM or Branch Location">
+                                                    <?php
+                                                    if (isset($input_error['Location'])) {
+                                                        echo '<span class="input-error">'.$input_error['Location'].'</span>';
+                                                    }
+                                                    ?>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="password2" class="col-sm-2 control-label">Status</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="password2" placeholder="Password">
+                                                    <input type="text" name="Status" class="form-control" id="password2" placeholder="Issue Status">
+                                                    <?php
+                                                    if (isset($input_error['Status'])) {
+                                                        echo '<span class="input-error">'.$input_error['Status'].'</span>';
+                                                    }
+                                                    ?>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-sm-offset-2 col-sm-10">
-                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                    <button type="submit" class="btn btn-primary" name="add_asset">Submit</button>
                                                 </div>
                                             </div>
                                         </form>
