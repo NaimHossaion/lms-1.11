@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2019 at 07:04 AM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.10
+-- Generation Time: Aug 24, 2020 at 08:06 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -21,6 +20,31 @@ SET time_zone = "+00:00";
 --
 -- Database: `ims`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `add_asset`
+--
+
+CREATE TABLE `add_asset` (
+  `Sl` tinyint(5) NOT NULL,
+  `Date` date NOT NULL,
+  `Incident` int(8) NOT NULL,
+  `Location` varchar(50) NOT NULL,
+  `Status` varchar(50) NOT NULL,
+  `Date_Time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `add_asset`
+--
+
+INSERT INTO `add_asset` (`Sl`, `Date`, `Incident`, `Location`, `Status`, `Date_Time`) VALUES
+(1, '0000-00-00', 12356, 'Dhanmondi', 'Repair Needed', '2020-08-24 18:03:52'),
+(4, '0000-00-00', 324324, 'Wari', 'UPS Problem', '2020-08-24 18:03:52'),
+(5, '0000-00-00', 11573, 'Banani', 'Battery Problem', '2020-08-24 18:03:52'),
+(6, '0000-00-00', 12359, 'Motijheel', 'Earthing Problem', '2020-08-24 18:04:48');
 
 -- --------------------------------------------------------
 
@@ -356,13 +380,19 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `username`, `password`, `image`, `status`, `datetime`) VALUES
-(1, 'sdkjhh', 'lkajsdlkaj@gmail.com', 'sdfskdslj', '1324355', NULL, 0, '2019-12-04 04:42:56'),
-(2, 'ffvldjlmvdmfv;ldm', 'nsdkvsdljs@ebl.com', 'llskklsdjjs', ';sl;dj;sld;lsdfsd', NULL, 0, '2019-12-04 04:43:30'),
-(3, 'askdjaskd', 'nklajldaksj@gmail.com', 'pass hash', '$2y$10$N8I5gxjymralNpLrZU10euHTKvO8kc6mPCFX6qn4tLtvsZMBwxbju', NULL, 0, '2019-12-04 04:59:58');
+(1, 'admin', 'naimcm@gmail.com', 'admin', '$2y$10$FQrNHyA1cbDGwjFQzXV0zemvi047lRTeUGwLcNL7TTRtzR0FikQse', NULL, 0, '2020-08-02 07:14:59');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `add_asset`
+--
+ALTER TABLE `add_asset`
+  ADD PRIMARY KEY (`Sl`),
+  ADD UNIQUE KEY `Sl_No` (`Sl`,`Date`),
+  ADD UNIQUE KEY `Incident` (`Incident`);
 
 --
 -- Indexes for table `users`
@@ -377,10 +407,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `add_asset`
+--
+ALTER TABLE `add_asset`
+  MODIFY `Sl` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
