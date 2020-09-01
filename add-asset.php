@@ -236,7 +236,7 @@ mysqli_close($con);
                     <div class="leftside-content-header">
                         <ul class="breadcrumbs">
                             <li><i class="fa fa-home" aria-hidden="true"></i><a href="index.php">Dashboard</a></li>
-                            <li><i class="fa fa-home" aria-hidden="true"></i><a href="add-asset.php">Add Asset</a></li>
+                            <li><a href="add-asset.php">Add Asset</a></li>
                         </ul>
                     </div>
                 </div>
