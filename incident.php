@@ -38,6 +38,7 @@
                                     <td><?= $row['Incident'] ?></td>
                                     <td><?= $row['Location'] ?></td>
                                     <td><?= $row['Status'] ?></td>
+                                    <td></td>
                                 </tr>
                                 <?php
                             }
