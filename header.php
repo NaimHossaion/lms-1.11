@@ -1,4 +1,5 @@
 <?php
+require_once 'dbcon.php';
 
 session_start();
 
@@ -26,6 +27,8 @@ $page = end($page);
     <link rel="stylesheet" href="vendor/toastr/toastr.min.css">
     <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.css">
     <link rel="stylesheet" href="stylesheets/css/style.css">
+    <!--dataTable-->
+    <link rel="stylesheet" href="vendor/data-table/media/css/dataTables.bootstrap.min.css">
 
 </head>
 
@@ -171,6 +174,7 @@ $page = end($page);
                             <li class="<?= $page == 'index.php' ? 'active-item':'' ?>"><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i><span>Dashboard</span></a></li>
                             <li class="<?= $page == 'online-ups.php' ? 'active-item':'' ?>"><a href="online-ups.php"><i class="fa fa-home" aria-hidden="true"></i><span>Online UPS</span></a></li>
                             <li class="<?= $page == 'add-asset.php' ? 'active-item':'' ?>"><a href="add-asset.php"><i class="fa fa-plus" aria-hidden="true"></i><span>Add Asset</span></a></li>
+                            <li class="<?= $page == 'incident.php' ? 'active-item':'' ?>"><a href="incident.php"><i class="fa fa-list" aria-hidden="true"></i><span>Incident List</span></a></li>
                         </ul>
                     </nav>
                 </div>

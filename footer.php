@@ -14,6 +14,12 @@
 <script src="vendor/toastr/toastr.min.js"></script>
 <script src="vendor/chart-js/chart.min.js"></script>
 <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+<!--dataTable-->
+<script src="vendor/data-table/media/js/jquery.dataTables.min.js"></script>
+<script src="vendor/data-table/media/js/dataTables.bootstrap.min.js"></script>
+<!--Examples-->
+<script src="javascripts/examples/tables/data-tables.js"></script>
+
 <script src="javascripts/examples/dashboard.js"></script>
 </body>
 </html>
