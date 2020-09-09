@@ -252,7 +252,7 @@ mysqli_close($con);
                                         <form class="form-horizontal" method="POST" action="<?= $_SERVER['PHP_SELF'] ?>">
                                             <h5 class="mb-lg">3kVA Online UPS Issue!</h5>
                                             <div class="form-group">
-                                                <label for="default-datepicker" class="col-sm-2 control-label ">Date</label>
+                                                <label for="default-datepicker" class="col-sm-4 control-label ">Date</label>
                                                 <div class="col-sm-5">
                                                     <div class="input-group">
                                                         <span class="input-group-addon x-primary"><i class="fa fa-calendar"></i></span>
@@ -266,8 +266,8 @@ mysqli_close($con);
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="email2" class="col-sm-2 control-label">Incident No</label>
-                                                <div class="col-sm-10">
+                                                <label for="email2" class="col-sm-4 control-label">Incident No</label>
+                                                <div class="col-sm-8">
                                                     <input type="text" name="Incident" class="form-control" id="email2" placeholder="Incident Number">
                                                     <?php
                                                     if (isset($input_error['Incident'])) {
@@ -277,8 +277,8 @@ mysqli_close($con);
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="email2" class="col-sm-2 control-label">Location</label>
-                                                <div class="col-sm-10">
+                                                <label for="email2" class="col-sm-4 control-label">Location</label>
+                                                <div class="col-sm-8">
                                                     <input type="text" name="Location" class="form-control" id="email2" placeholder="ATM or Branch Location">
                                                     <?php
                                                     if (isset($input_error['Location'])) {
@@ -288,8 +288,8 @@ mysqli_close($con);
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="password2" class="col-sm-2 control-label">Status</label>
-                                                <div class="col-sm-10">
+                                                <label for="password2" class="col-sm-4 control-label">Status</label>
+                                                <div class="col-sm-8">
                                                     <input type="text" name="Status" class="form-control" id="password2" placeholder="Issue Status">
                                                     <?php
                                                     if (isset($input_error['Status'])) {
@@ -299,7 +299,7 @@ mysqli_close($con);
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <div class="col-sm-offset-2 col-sm-10">
+                                                <div class="col-sm-offset-4 col-sm-8">
                                                     <button type="submit" class="btn btn-primary" name="add_asset">Submit</button>
                                                 </div>
                                             </div>
