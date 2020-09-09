@@ -175,6 +175,13 @@ $page = end($page);
                             <li class="<?= $page == 'online-ups.php' ? 'active-item':'' ?>"><a href="online-ups.php"><i class="fa fa-home" aria-hidden="true"></i><span>Online UPS</span></a></li>
                             <li class="<?= $page == 'add-asset.php' ? 'active-item':'' ?>"><a href="add-asset.php"><i class="fa fa-plus" aria-hidden="true"></i><span>Add Asset</span></a></li>
                             <li class="<?= $page == 'incident.php' ? 'active-item':'' ?>"><a href="incident.php"><i class="fa fa-list" aria-hidden="true"></i><span>Incident List</span></a></li>
+                            <li class="has-child-item close-item <?= $page == 'all-incidents.php' ? 'open-item':'' ?><?= $page == 'new-incident.php' ? 'open-item':'' ?>">
+                                <a><i class="fa fa-list" aria-hidden="true"></i><span>Incidents</span></a>
+                                <ul class="nav child-nav level-1">
+                                    <li class="<?= $page == 'new-incident.php' ? 'active-item':'' ?>"><a href="new-incident.php"><i class="fa fa-plus" aria-hidden="true"></i><span>New Incident</span></a></li>
+                                    <li class="<?= $page == 'all-incidents.php' ? 'active-item':'' ?>"><a href="all-incidents.php"><i class="fa fa-server" aria-hidden="true"></i><span>All Incidents</span></a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </nav>
                 </div>
