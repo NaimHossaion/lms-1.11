@@ -19,16 +19,31 @@ $page = end($page);
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Service DESK | Dashboard</title>
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <!--load progress bar-->
     <script src="vendor/pace/pace.min.js"></script>
     <link href="vendor/pace/pace-theme-minimal.css" rel="stylesheet" />
+    <!--BASIC css-->
+    <!-- ========================================================= -->
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="vendor/animate.css/animate.css">
-    <link rel="stylesheet" href="vendor/toastr/toastr.min.css">
-    <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.css">
-    <link rel="stylesheet" href="stylesheets/css/style.css">
+    <!--SECTION css-->
+    <!-- ========================================================= -->
     <!--dataTable-->
     <link rel="stylesheet" href="vendor/data-table/media/css/dataTables.bootstrap.min.css">
+    <!-- ========================================================= -->
+    <!--Select with searching & tagging-->
+    <link rel="stylesheet" href="vendor/select2/css/select2.min.css">
+    <link rel="stylesheet" href="vendor/select2/css/select2-bootstrap.min.css">
+    <!--Time picker-->
+    <link rel="stylesheet" href="vendor/bootstrap_time-picker/css/timepicker.css">
+    <!--Color picker-->
+    <link rel="stylesheet" href="vendor/bootstrap_color-picker/css/bootstrap-colorpicker.min.css">
+    <!--Date picker-->
+    <link rel="stylesheet" href="vendor/bootstrap_date-picker/css/bootstrap-datepicker3.min.css">
+    <!--TEMPLATE css-->
+    <!-- ========================================================= -->
+    <link rel="stylesheet" href="stylesheets/css/style.css">
 
 </head>
 
