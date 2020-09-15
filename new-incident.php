@@ -1,7 +1,7 @@
 <?php
 require_once 'header.php';
 if(isset($_POST['new-incident'])){
-    $Ref_ID = date('Ymdhis.');
+    $Ref_ID = date('Ymdhis');
     $Date = $_POST['Date'];
     $Incident = $_POST['Incident'];
     $Branch_Name = $_POST['Branch_Name'];
@@ -13,7 +13,7 @@ if(isset($_POST['new-incident'])){
     $UPS_Serial = $_POST['UPS_Serial'];
     $Remarks = $_POST['Remarks'];
 }
-
+    mysqli_query($con,"INSERT INTO add_asset(Ref_ID, Date, Incident, Branch_Name, Address, Is_Resolved, UPS_Model, UPS_Brand, UPS_Capacity, UPS_Serial, Remarks) VALUES ('$Ref_ID', '$Date', '$Incident', '$Branch_Name,' '$Address' '$Is_Resolved', '$UPS_Model', '$UPS_Brand', '$UPS_Capacity', '$UPS_Serial', '$Remarks')");
 
 ?>
 
@@ -55,7 +55,7 @@ if(isset($_POST['new-incident'])){
                                 <div class="form-group">
                                     <label for="Branch_Name" class="col-sm-2 control-label">Branch Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="Branch_Name" placeholder="Branch_Name">
+                                        <input type="text" class="form-control" id="Branch_Name" placeholder="Branch Name">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -67,31 +67,31 @@ if(isset($_POST['new-incident'])){
                                 <div class="form-group">
                                     <label for="Is_Resolved" class="col-sm-2 control-label">Is Resolved</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="Is_Resolved" placeholder="Is_Resolved">
+                                        <input type="text" class="form-control" id="Is_Resolved" placeholder="Is Resolved">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="UPS_Model" class="col-sm-2 control-label">UPS Model</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="UPS_Model" placeholder="UPS_Model">
+                                        <input type="text" class="form-control" id="UPS_Model" placeholder="UPS Model">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="UPS_Brand" class="col-sm-2 control-label">UPS Brand</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="UPS_Brand" placeholder="UPS_Brand">
+                                        <input type="text" class="form-control" id="UPS_Brand" placeholder="UPS Brand">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="UPS_Capacity" class="col-sm-2 control-label">UPS Capacity</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="UPS_Capacity" placeholder="UPS_Capacity">
+                                        <input type="text" class="form-control" id="UPS_Capacity" placeholder="UPS Capacity">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="UPS_Serial" class="col-sm-2 control-label">UPS Serial</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="UPS_Serial" placeholder="UPS_Serial">
+                                        <input type="text" class="form-control" id="UPS_Serial" placeholder="UPS Serial">
                                     </div>
                                 </div>
                                 <div class="form-group">
