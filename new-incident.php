@@ -1,6 +1,8 @@
 <?php
 require_once 'header.php';
-if(isset($_POST['new-incident'])){
+require_once 'dbcon.php';
+
+/*if(isset($_POST['new-incident'])){
     $Ref_ID = date('Ymdhis');
     $Date = $_POST['Date'];
     $Incident = $_POST['Incident'];
@@ -12,8 +14,45 @@ if(isset($_POST['new-incident'])){
     $UPS_Capacity = $_POST['UPS_Capacity'];
     $UPS_Serial = $_POST['UPS_Serial'];
     $Remarks = $_POST['Remarks'];
+
+    $result = mysqli_query($con,"INSERT INTO incidents(Ref_ID, Date, Incident, Branch_Name, Address, Is_Resolved, UPS_Model, UPS_Brand, UPS_Capacity, UPS_Serial, Remarks) VALUES ('$Ref_ID', '$Date', '$Incident', '$Branch_Name,' '$Address' '$Is_Resolved', '$UPS_Model', '$UPS_Brand', '$UPS_Capacity', '$UPS_Serial', '$Remarks')");
+
+    if ($result){
+        $success = "Data added successfully!";
+    }else {
+        $error = "Something Wrong!";
+    }
+}*/
+
+
+
+if(isset($_POST['new-incident'])){
+    $Ref_ID = date('Ymdhis');
+    $Date = $_POST['Date'];
+    $Incident = $_POST['Incident'];
+    $Branch_Name = $_POST['Branch_Name'];
+    $Address = $_POST['Address'];
+    $Is_Resolved = $_POST['Is_Resolved'];
+    $UPS_Model = $_POST['UPS_Model'];
+    $UPS_Brand = $_POST['UPS_Brand'];
+    $UPS_Capacity = $_POST['UPS_Capacity'];
+    $UPS_Capacity = $_POST['UPS_Capacity'];
+    $UPS_Serial = $_POST['UPS_Serial'];
+    $Remarks = $_POST['Remarks'];
+
+
+
+    $result = mysqli_query($con, "INSERT INTO `incidents`(`Ref_ID`, `Date`, `Incident`, `Branch_Name`, `Address`, `Is_Resolved`, `UPS_Model`, `UPS_Brand`, `UPS_Capacity`, `UPS_Serial`, `Remarks`) VALUES ('$Ref_ID', '$Date', '$Incident', '$Branch_Name,' '$Address' '$Is_Resolved', '$UPS_Model', '$UPS_Brand', '$UPS_Capacity', '$UPS_Serial', '$Remarks')");
+
+    if ($result){
+        $success = "Data added successfully!";
+    }else {
+        $error = "Something Wrong!";
+    }
 }
-    mysqli_query($con,"INSERT INTO add_asset(Ref_ID, Date, Incident, Branch_Name, Address, Is_Resolved, UPS_Model, UPS_Brand, UPS_Capacity, UPS_Serial, Remarks) VALUES ('$Ref_ID', '$Date', '$Incident', '$Branch_Name,' '$Address' '$Is_Resolved', '$UPS_Model', '$UPS_Brand', '$UPS_Capacity', '$UPS_Serial', '$Remarks')");
+mysqli_close($con);
+
+
 
 ?>
 
@@ -49,55 +88,55 @@ if(isset($_POST['new-incident'])){
                                 <div class="form-group">
                                     <label for="Incident" class="col-sm-2 control-label">Incident</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="Incident" placeholder="Incident">
+                                        <input type="text" name="Incident" class="form-control" id="Incident" placeholder="Incident">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="Branch_Name" class="col-sm-2 control-label">Branch Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="Branch_Name" placeholder="Branch Name">
+                                        <input type="text" name="Branch_Name" class="form-control" id="Branch_Name" placeholder="Branch Name">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="Address" class="col-sm-2 control-label">Address</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="Address" placeholder="Address">
+                                        <input type="text" name="Address" class="form-control" id="Address" placeholder="Address">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="Is_Resolved" class="col-sm-2 control-label">Is Resolved</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="Is_Resolved" placeholder="Is Resolved">
+                                        <input type="text" name="Is_Resolved" class="form-control" id="Is_Resolved" placeholder="Is Resolved">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="UPS_Model" class="col-sm-2 control-label">UPS Model</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="UPS_Model" placeholder="UPS Model">
+                                        <input type="text" name="UPS_Model" class="form-control" id="UPS_Model" placeholder="UPS Model">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="UPS_Brand" class="col-sm-2 control-label">UPS Brand</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="UPS_Brand" placeholder="UPS Brand">
+                                        <input type="text" name="UPS_Brand" class="form-control" id="UPS_Brand" placeholder="UPS Brand">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="UPS_Capacity" class="col-sm-2 control-label">UPS Capacity</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="UPS_Capacity" placeholder="UPS Capacity">
+                                        <input type="text" name="UPS_Capacity" class="form-control" id="UPS_Capacity" placeholder="UPS Capacity">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="UPS_Serial" class="col-sm-2 control-label">UPS Serial</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="UPS_Serial" placeholder="UPS Serial">
+                                        <input type="text" name="UPS_Serial" class="form-control" id="UPS_Serial" placeholder="UPS Serial">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="Remarks" class="col-sm-2 control-label">Remarks</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="Remarks" placeholder="Remarks">
+                                        <input type="text" name="Remarks" class="form-control" id="Remarks" placeholder="Remarks">
                                     </div>
                                 </div>
                                 <div class="form-group">
