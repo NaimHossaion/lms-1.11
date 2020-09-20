@@ -4,7 +4,7 @@ require_once 'header.php';
 require_once 'dbcon.php';
 
 if(isset($_POST['add_asset'])){
-    $Ref_ID = $_POST['Ref_ID'];
+    $Ref_ID = date('Ymdhis');
     $Date = $_POST['Date'];
     $Incident = $_POST['Incident'];
     $Remarks = $_POST['Remarks'];
