@@ -9,24 +9,23 @@ if(isset($_POST['add_asset'])){
     $Incident = $_POST['Incident'];
     $Remarks = $_POST['Remarks'];
 
-    //Ref_ID    //Date    //Incident    //Remarks
+    //Ref_ID    Date    Incident    Remarks
 
     $input_error = array();
-    if(empty($Ref_ID)) {
-        $input_error['Ref_ID'] = "Enter Receive Date!";
-    }
-    if(empty($IDate)) {
-        $input_error['Date'] = "Enter Incident Number!";
+
+    if(empty($Date)) {
+        $input_error['Date'] = "Enter Issue Date!";
     }
     if(empty($Incident)) {
-        $input_error['Incident'] = "Enter Branch or ATM Location!";
+        $input_error['Incident'] = "Enter Incident ";
     }
     if(empty($Remarks)) {
-        $input_error['Remarks'] = "Enter Issue Status!";
+        $input_error['Remarks'] = "Remarks or Comments";
     }
     if (count($input_error) == 0) {
         //$password_hash = password_hash($password, PASSWORD_DEFAULT);
-        $result = mysqli_query($con,"INSERT INTO add_asset(Ref_ID, Date, Incident, Remarks) VALUES ( '$Ref_ID', '$Date', '$Incident', '$Remarks')");
+        $result = mysqli_query($con,"INSERT INTO testing(Ref_ID, Date, Incident, Remarks) 
+                VALUES ('$Ref_ID', '$Date', '$Incident', '$Remarks')");
         if ($result){
             $success = "Data added successfully!";
         }else {
@@ -87,23 +86,12 @@ mysqli_close($con);
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="email2" class="col-sm-4 control-label">Location</label>
+                                            <label for="password2" class="col-sm-4 control-label">Remarks</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="Location" class="form-control" id="email2" placeholder="ATM or Branch Location">
+                                                <input type="text" name="Remarks" class="form-control" id="password2" placeholder="Remarks">
                                                 <?php
-                                                if (isset($input_error['Location'])) {
-                                                    echo '<span class="input-error">'.$input_error['Location'].'</span>';
-                                                }
-                                                ?>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="password2" class="col-sm-4 control-label">Status</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" name="Status" class="form-control" id="password2" placeholder="Issue Status">
-                                                <?php
-                                                if (isset($input_error['Status'])) {
-                                                    echo '<span class="input-error">'.$input_error['Status'].'</span>';
+                                                if (isset($input_error['Remarks'])) {
+                                                    echo '<span class="input-error">'.$input_error['Remarks'].'</span>';
                                                 }
                                                 ?>
                                             </div>
@@ -120,6 +108,6 @@ mysqli_close($con);
                     </div>
                 </div>
             </div>
-            <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
 
 <?php require_once 'footer.php'; ?>

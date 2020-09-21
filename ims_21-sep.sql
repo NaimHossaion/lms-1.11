@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 20, 2020 at 07:22 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+-- Generation Time: Sep 21, 2020 at 02:02 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -126,6 +126,13 @@ CREATE TABLE `testing` (
   `Remarks` varchar(30) NOT NULL,
   `Date_Time` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `testing`
+--
+
+INSERT INTO `testing` (`Ref_ID`, `Date`, `Incident`, `Remarks`, `Date_Time`) VALUES
+(2147483647, '2020-09-12', '1232303', 'Done OK', '2020-09-21 06:23:33');
 
 -- --------------------------------------------------------
 

@@ -2,30 +2,6 @@
 require_once 'header.php';
 require_once 'dbcon.php';
 
-/*if(isset($_POST['new-incident'])){
-    $Ref_ID = date('Ymdhis');
-    $Date = $_POST['Date'];
-    $Incident = $_POST['Incident'];
-    $Branch_Name = $_POST['Branch_Name'];
-    $Address = $_POST['Address'];
-    $Is_Resolved = $_POST['Is_Resolved'];
-    $UPS_Model = $_POST['UPS_Model'];
-    $UPS_Brand = $_POST['UPS_Brand'];
-    $UPS_Capacity = $_POST['UPS_Capacity'];
-    $UPS_Serial = $_POST['UPS_Serial'];
-    $Remarks = $_POST['Remarks'];
-
-    $result = mysqli_query($con,"INSERT INTO incidents(Ref_ID, Date, Incident, Branch_Name, Address, Is_Resolved, UPS_Model, UPS_Brand, UPS_Capacity, UPS_Serial, Remarks) VALUES ('$Ref_ID', '$Date', '$Incident', '$Branch_Name,' '$Address' '$Is_Resolved', '$UPS_Model', '$UPS_Brand', '$UPS_Capacity', '$UPS_Serial', '$Remarks')");
-
-    if ($result){
-        $success = "Data added successfully!";
-    }else {
-        $error = "Something Wrong!";
-    }
-}*/
-
-
-
 if(isset($_POST['new-incident'])){
     $Ref_ID = date('Ymdhis');
     $Date = $_POST['Date'];
@@ -40,9 +16,9 @@ if(isset($_POST['new-incident'])){
     $UPS_Serial = $_POST['UPS_Serial'];
     $Remarks = $_POST['Remarks'];
 
-
-
-    $result = mysqli_query($con, "INSERT INTO `incidents`(`Ref_ID`, `Date`, `Incident`, `Branch_Name`, `Address`, `Is_Resolved`, `UPS_Model`, `UPS_Brand`, `UPS_Capacity`, `UPS_Serial`, `Remarks`) VALUES ('$Ref_ID', '$Date', '$Incident', '$Branch_Name,' '$Address' '$Is_Resolved', '$UPS_Model', '$UPS_Brand', '$UPS_Capacity', '$UPS_Serial', '$Remarks')");
+    $result = mysqli_query($con,
+        "INSERT INTO `incidents`(`Ref_ID`, `Date`, `Incident`, `Branch_Name`, `Address`, `Is_Resolved`, `UPS_Model`, `UPS_Brand`, `UPS_Capacity`, `UPS_Serial`, `Remarks`) 
+            VALUES ('$Ref_ID', '$Date', '$Incident', '$Branch_Name,' '$Address' '$Is_Resolved', '$UPS_Model', '$UPS_Brand', '$UPS_Capacity', '$UPS_Serial', '$Remarks')");
 
     if ($result){
         $success = "Data added successfully!";
