@@ -59,7 +59,7 @@ mysqli_close($con);
                                     <div class="col-sm-5">
                                         <div class="input-group">
                                             <span class="input-group-addon x-primary"><i class="fa fa-calendar"></i></span>
-                                            <input type="text" name="Date" class="form-control" id="default-datepicker">
+                                            <input type="date" name="Date" class="form-control" id="default-datepicker">
                                             <?php
                                             if (isset($input_error['Date'])) {
                                                 echo '<span class="input-error">'.$input_error['Date'].'</span>';
@@ -71,7 +71,7 @@ mysqli_close($con);
                                 <div class="form-group">
                                     <label for="email2" class="col-sm-4 control-label">Incident No</label>
                                     <div class="col-sm-8">
-                                        <input type="text" name="Incident" class="form-control" id="email2" placeholder="Incident Number">
+                                        <input type="text" name="Incident" class="form-control" id="email2" placeholder="Incident Number" required>
                                         <?php
                                         if (isset($input_error['Incident'])) {
                                             echo '<span class="input-error">'.$input_error['Incident'].'</span>';
@@ -82,7 +82,7 @@ mysqli_close($con);
                                 <div class="form-group">
                                     <label for="password2" class="col-sm-4 control-label">Remarks</label>
                                     <div class="col-sm-8">
-                                        <input type="text" name="Remarks" class="form-control" id="password2" placeholder="Remarks">
+                                        <input type="text" name="Remarks" class="form-control" id="password2" placeholder="Remarks" required>
                                         <?php
                                         if (isset($input_error['Remarks'])) {
                                             echo '<span class="input-error">'.$input_error['Remarks'].'</span>';
