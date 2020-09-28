@@ -87,6 +87,7 @@ if(isset($_POST['add_asset'])){
                                 <div class="form-group">
                                     <div class="col-sm-offset-4 col-sm-8">
                                         <button type="submit" class="btn btn-primary" name="add_asset">Submit</button>
+                                        <button class="btn" onclick="document.location='all-incidents.php'">Cancel</button>
                                     </div>
                                 </div>
                             </form>
