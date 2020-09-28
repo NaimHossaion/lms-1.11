@@ -3,7 +3,7 @@ require_once 'header.php';
 require_once 'dbcon.php';
 
 if(isset($_POST['add_asset'])){
-    $Ref_ID = date('Ymdhis');
+    $Ref_ID = date('mdhis');
     $Date = $_POST['Date'];
     $Incident = $_POST['Incident'];
     $Remarks = $_POST['Remarks'];
@@ -11,7 +11,7 @@ if(isset($_POST['add_asset'])){
     $result = mysqli_query($con,"INSERT INTO testing(Ref_ID, Date, Incident, Remarks) 
                 VALUES ('$Ref_ID', '$Date', '$Incident', '$Remarks')");
     if ($result){
-        $success = "Incident: $Incident added successfully!";
+        $success = "Incident - $Incident added successfully!";
     }else {
         $error = "Something Wrong!";
     }
