@@ -8,32 +8,18 @@ if(isset($_POST['add_asset'])){
     $Incident = $_POST['Incident'];
     $Remarks = $_POST['Remarks'];
 
-    $input_error = array();
-
-    if(empty($Date)) {
-        $input_error['Date'] = "Enter Issue Date!";
-    }
-    if(empty($Incident)) {
-        $input_error['Incident'] = "Enter Incident ";
-    }
-    if(empty($Remarks)) {
-        $input_error['Remarks'] = "Remarks or Comments";
-    }
-    if (count($input_error) == 0) {
-        //$password_hash = password_hash($password, PASSWORD_DEFAULT);
-        $result = mysqli_query($con,"INSERT INTO testing(Ref_ID, Date, Incident, Remarks, Status) 
-                VALUES ('$Ref_ID', '$Date', '$Incident', '$Remarks', '0')");
-        if ($result){
-            $success = "Data added successfully!";
-        }else {
-            $error = "Something Wrong!";
-        }
+    $result = mysqli_query($con,"INSERT INTO testing(Ref_ID, Date, Incident, Remarks) 
+                VALUES ('$Ref_ID', '$Date', '$Incident', '$Remarks')");
+    if ($result){
+        $success = "Incident - $Incident added successfully!";
+    }else {
+        $error = "Something Wrong!";
     }
 }
-mysqli_close($con);
 
 ?>
-    <!-- content HEADER -->
+
+<!-- content HEADER -->
     <!-- ========================================================= -->
     <div class="content-header">
         <!-- leftside content header -->
@@ -48,6 +34,29 @@ mysqli_close($con);
     <div class="row animated fadeInUp">
         <!--BASIC-->
         <div class="col-sm-6 col-sm-offset-3">
+            <!-- START: Show error or success messages -->
+            <?php
+            if (isset($success)){
+                ?>
+                <div class="alert alert-success fade in">
+                    <?= $success ?>
+                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                </div>
+                <?php
+            }
+            ?>
+
+            <?php
+            if (isset($error)){
+                ?>
+                <div class="alert alert-danger fade in">
+                    <?= $error ?>
+                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                </div>
+                <?php
+            }
+            ?>
+            <!-- END: Show error or success messages -->
             <div class="panel">
                 <div class="panel-content">
                     <div class="row">
@@ -59,12 +68,7 @@ mysqli_close($con);
                                     <div class="col-sm-5">
                                         <div class="input-group">
                                             <span class="input-group-addon x-primary"><i class="fa fa-calendar"></i></span>
-                                            <input type="date" name="Date" class="form-control" id="default-datepicker">
-                                            <?php
-                                            if (isset($input_error['Date'])) {
-                                                echo '<span class="input-error">'.$input_error['Date'].'</span>';
-                                            }
-                                            ?>
+                                            <input type="date" name="Date" class="form-control" id="default-datepicker" required>
                                         </div>
                                     </div>
                                 </div>
@@ -72,27 +76,18 @@ mysqli_close($con);
                                     <label for="email2" class="col-sm-4 control-label">Incident No</label>
                                     <div class="col-sm-8">
                                         <input type="text" name="Incident" class="form-control" id="email2" placeholder="Incident Number" required>
-                                        <?php
-                                        if (isset($input_error['Incident'])) {
-                                            echo '<span class="input-error">'.$input_error['Incident'].'</span>';
-                                        }
-                                        ?>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="password2" class="col-sm-4 control-label">Remarks</label>
                                     <div class="col-sm-8">
                                         <input type="text" name="Remarks" class="form-control" id="password2" placeholder="Remarks" required>
-                                        <?php
-                                        if (isset($input_error['Remarks'])) {
-                                            echo '<span class="input-error">'.$input_error['Remarks'].'</span>';
-                                        }
-                                        ?>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-offset-4 col-sm-8">
                                         <button type="submit" class="btn btn-primary" name="add_asset">Submit</button>
+                                        <button class="btn" onclick="document.location='all-incidents.php'">Cancel</button>
                                     </div>
                                 </div>
                             </form>
