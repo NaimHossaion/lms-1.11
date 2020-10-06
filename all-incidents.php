@@ -21,7 +21,6 @@
                         <table id="basic-table" class="data-table table table-striped nowrap table-hover" cellspacing="0" width="100%">
                             <thead>
                             <tr>
-                                <th>Reference ID</th>
                                 <th>Date</th>
                                 <th>Incident</th>
                                 <th>Remarks</th>
@@ -35,7 +34,6 @@
                             while ($row = mysqli_fetch_assoc($result)){
                                 ?>
                                 <tr>
-                                    <td><?= $row['Ref_ID'] ?></td>
                                     <td><?= date('d-M-Y', strtotime($row['Date'])) ?></td>
                                     <td><?= $row['Incident'] ?></td>
                                     <td><?= $row['Remarks'] ?></td>
