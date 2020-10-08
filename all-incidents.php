@@ -38,7 +38,11 @@
                                     <td><?= $row['Incident'] ?></td>
                                     <td><?= $row['Remarks'] ?></td>
                                     <td><?= $row['Status'] ?></td>
-                                    <td></td>
+                                    <td>
+                                        <a href="javascript:avoid(0)" data-toggle="modal" data-target="#Ref_ID-<?= $row['Ref_ID'] ?>"<i class="fa fa-eye"></i>&nbsp;</a>
+                                        <a href=""><i class="fa fa-pencil"></i>&nbsp;</a>
+                                        <a href="delete.php?DeleteIncident=<?= base64_encode($row ['Ref_ID']) ?>" onclick="return confirm('Are you sure to delete this item?')"><i class="fa fa-trash-o"></i>&nbsp;</a>
+                                    </td>
                                 </tr>
                                     <?php
                             }
@@ -52,4 +56,45 @@
         </div>
     </div>
 
+<?php
+$result = mysqli_query($con, "SELECT * FROM testing");
+while ($row = mysqli_fetch_assoc($result)){
+    ?>
+    <!-- Modal -->
+    <div class="modal fade" id="Ref_ID-<?= $row['Ref_ID'] ?>" tabindex="-1" role="dialog" aria-labelledby="modal-info-label">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header state modal-info">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modal-info-label"><i class="fa fa-info-circle"></i>Incident Details</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Date</th>
+                            <td><?= date('d-M-Y', strtotime($row['Date'])) ?></td>
+                        </tr>
+                        <tr>
+                            <th>Incident</th>
+                            <td><?= $row['Incident'] ?></td>
+                        </tr>
+                        <tr>
+                            <th>Remarks</th>
+                            <td><?= $row['Remarks'] ?></td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td><?= $row['Status'] ?></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php
+}
+?>
 <?php require_once 'footer.php'; ?>
