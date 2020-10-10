@@ -37,7 +37,7 @@
                                     <td><?= date('d-M-Y', strtotime($row['Date'])) ?></td>
                                     <td><?= $row['Incident'] ?></td>
                                     <td><?= $row['Remarks'] ?></td>
-                                    <td><?= $row['Status'] ?></td>
+                                    <td><?= $row['Status'] == 1 ? 'Active' : 'Inactive' ?></td>
                                     <td>
                                         <a href="javascript:avoid(0)" data-toggle="modal" data-target="#Ref_ID-<?= $row['Ref_ID'] ?>"<i class="fa fa-eye"></i>&nbsp;</a>
                                         <a href="" data-toggle="modal" data-target="#Incident_Update-<?= $row['Ref_ID'] ?>"><i class="fa fa-pencil" data-toggle="tooltip" title="Edit"></i>&nbsp;</a>
@@ -84,7 +84,7 @@ while ($row = mysqli_fetch_assoc($result)){
                         </tr>
                         <tr>
                             <th>Status</th>
-                            <td><?= $row['Status'] ?></td>
+                            <td><?= $row['Status'] == 1 ? 'Active' : 'Inactive' ?></td>
                         </tr>
                     </table>
                 </div>
