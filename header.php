@@ -8,9 +8,9 @@ if (!isset($_SESSION['user_login'])){
 }
 $page = explode('/', $_SERVER['PHP_SELF']);
 $page = end($page);
+
+
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en" class="fixed left-sidebar-top">
@@ -114,6 +114,7 @@ $page = end($page);
                                     <li class="<?= $page == 'all-incidents.php' ? 'active-item':'' ?>"><a href="all-incidents.php"><i class="fa fa-server" aria-hidden="true"></i><span>All Incidents</span></a></li>
                                 </ul>
                             </li>
+                            <li class="<?= $page == 'officer_page.php' ? 'active-item':'' ?>"><a href="officer_page.php"><i class="fa fa-user" aria-hidden="true"></i><span>Officer List</span></a></li>
                         </ul>
                     </nav>
                 </div>
