@@ -36,7 +36,10 @@
 <script src="vendor/data-table/media/js/dataTables.bootstrap.min.js"></script>
 <!--Examples-->
 <script src="javascripts/examples/tables/data-tables.js"></script>
-
+<!--Examples-->
+<script src="javascripts/examples/dashboard.js"></script>
+<!--Gallery with Magnific popup-->
+<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
 </body>
 </html>

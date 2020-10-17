@@ -9,6 +9,10 @@ if (!isset($_SESSION['user_login'])){
 $page = explode('/', $_SERVER['PHP_SELF']);
 $page = end($page);
 
+$sign_in = $_SESSION['user_login'];
+$data = mysqli_query($con, "SELECT * FROM `users` WHERE `username` = '$sign_in'");
+
+$users_info = mysqli_fetch_assoc($data);
 
 ?>
 
@@ -29,6 +33,10 @@ $page = end($page);
     <link rel="stylesheet" href="vendor/animate.css/animate.css">
     <!--SECTION css-->
     <!-- ========================================================= -->
+    <!--Notification msj-->
+    <link rel="stylesheet" href="vendor/toastr/toastr.min.css">
+    <!--Magnific popup-->
+    <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.css">
     <!--dataTable-->
     <link rel="stylesheet" href="vendor/data-table/media/css/dataTables.bootstrap.min.css">
     <!-- ========================================================= -->
@@ -74,7 +82,7 @@ $page = end($page);
                         <img alt="profile photo" src="images/engineer.png" />
                     </div>
                     <div class="user-info">
-                        <span class="user-name">Service Engineer</span>
+                        <span class="user-name"><?= $users_info['name'] ?></span>
                         <span class="user-profile">Admin</span>
                     </div>
                 </div>
@@ -115,6 +123,7 @@ $page = end($page);
                                 </ul>
                             </li>
                             <li class="<?= $page == 'officer_page.php' ? 'active-item':'' ?>"><a href="officer_page.php"><i class="fa fa-user" aria-hidden="true"></i><span>Officer List</span></a></li>
+                            <li class="<?= $page == 'inventory_page.php' ? 'active-item':'' ?>"><a href="inventory_page.php"><i class="fa fa-desktop" aria-hidden="true"></i><span>Inventory PC</span></a></li>
                         </ul>
                     </nav>
                 </div>
