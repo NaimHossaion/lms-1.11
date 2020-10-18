@@ -7,39 +7,41 @@
         <div class="leftside-content-header">
             <ul class="breadcrumbs">
                 <li><i class="fa fa-home" aria-hidden="true"></i><a href="index.php">Dashboard</a></li>
-                <li><a href="javascript:avoid(0)">Inventory PC</a></li>
+                <li><a href="javascript:avoid(0)">Online UPS</a></li>
             </ul>
         </div>
     </div>
     <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
     <div class="row animated fadeInUp">
         <div class="col-sm-12">
-            <h4 class="section-subtitle"><b>Inventory of Desktop & Laptop</b></h4>
+            <h4 class="section-subtitle"><b>Inventory of Online UPS</b></h4>
             <div class="panel">
                 <div class="panel-content">
                     <div class="table-responsive">
                         <table id="basic-table" class="data-table table table-striped nowrap table-hover" cellspacing="0" width="100%">
                             <thead>
                             <tr>
-                                <th>User_Name</th>
-                                <th>CPU_Model</th>
-                                <th>CPU_Asset_Tag</th>
-                                <th>CPU_Serial</th>
-                                <th>OS</th>
+                                <th>Location</th>
+                                <th>Address</th>
+                                <th>Brand</th>
+                                <th>Model</th>
+                                <th>Capacity</th>
+                                <th>Serial_Number</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php
-                            $result = mysqli_query($con, "SELECT * FROM inventory_pc");
+                            $result = mysqli_query($con, "SELECT * FROM inventory_online_ups");
                             while ($row = mysqli_fetch_assoc($result)){
                                 ?>
                                 <tr>
-                                    <td><?= $row['User_Name'] ?></td>
-                                    <td><?= $row['CPU_Model'] ?></td>
-                                    <td><?= $row['CPU_Asset_Tag'] ?></td>
-                                    <td><?= $row['CPU_Serial'] ?></td>
-                                    <td><?= $row['OS'] ?></td>
+                                    <td><?= $row['Location'] ?></td>
+                                    <td><?= $row['Address'] ?></td>
+                                    <td><?= $row['Brand'] ?></td>
+                                    <td><?= $row['Model'] ?></td>
+                                    <td><?= $row['Capacity'] ?></td>
+                                    <td><?= $row['Serial_Number'] ?></td>
                                     <td>
                                         <a href="" data-toggle="modal" data-target="#Ref_ID-<?= $row['SL'] ?>"<i class="fa fa-eye"  data-toggle="tooltip" title="View Details"></i>&nbsp;</a>
                                         <a href="" data-toggle="modal" data-target="#Incident_Update-<?= $row['SL'] ?>"><i class="fa fa-pencil-square-o" data-toggle="tooltip" title="Edit"></i>&nbsp;</a>

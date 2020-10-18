@@ -7,39 +7,45 @@
         <div class="leftside-content-header">
             <ul class="breadcrumbs">
                 <li><i class="fa fa-home" aria-hidden="true"></i><a href="index.php">Dashboard</a></li>
-                <li><a href="javascript:avoid(0)">Inventory PC</a></li>
+                <li><a href="javascript:avoid(0)">Warranty Status</a></li>
             </ul>
         </div>
     </div>
     <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
     <div class="row animated fadeInUp">
         <div class="col-sm-12">
-            <h4 class="section-subtitle"><b>Inventory of Desktop & Laptop</b></h4>
+            <h4 class="section-subtitle"><b>Warranty Claim Status</b></h4>
             <div class="panel">
                 <div class="panel-content">
                     <div class="table-responsive">
                         <table id="basic-table" class="data-table table table-striped nowrap table-hover" cellspacing="0" width="100%">
                             <thead>
                             <tr>
+                                <th>Model_Name</th>
+                                <th>Device Serial</th>
+                                <th>Asset_Tag</th>
                                 <th>User_Name</th>
-                                <th>CPU_Model</th>
-                                <th>CPU_Asset_Tag</th>
-                                <th>CPU_Serial</th>
-                                <th>OS</th>
+                                <th>Department</th>
+                                <th>Mailing_Date</th>
+                                <th>Sending_Date</th>
+                                <th>Return_Date</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php
-                            $result = mysqli_query($con, "SELECT * FROM inventory_pc");
+                            $result = mysqli_query($con, "SELECT * FROM warranty_claim");
                             while ($row = mysqli_fetch_assoc($result)){
                                 ?>
                                 <tr>
+                                    <td><?= $row['Model_Name'] ?></td>
+                                    <td><?= $row['Device_Serial'] ?></td>
+                                    <td><?= $row['Asset_Tag'] ?></td>
                                     <td><?= $row['User_Name'] ?></td>
-                                    <td><?= $row['CPU_Model'] ?></td>
-                                    <td><?= $row['CPU_Asset_Tag'] ?></td>
-                                    <td><?= $row['CPU_Serial'] ?></td>
-                                    <td><?= $row['OS'] ?></td>
+                                    <td><?= $row['Department'] ?></td>
+                                    <td><?= $row['Mailing_Date'] ?></td>
+                                    <td><?= $row['Sending_Date'] ?></td>
+                                    <td><?= $row['Return_Date'] ?></td>
                                     <td>
                                         <a href="" data-toggle="modal" data-target="#Ref_ID-<?= $row['SL'] ?>"<i class="fa fa-eye"  data-toggle="tooltip" title="View Details"></i>&nbsp;</a>
                                         <a href="" data-toggle="modal" data-target="#Incident_Update-<?= $row['SL'] ?>"><i class="fa fa-pencil-square-o" data-toggle="tooltip" title="Edit"></i>&nbsp;</a>
@@ -58,7 +64,7 @@
     </div>
 
 <?php
-$result = mysqli_query($con, "SELECT * FROM inventory_pc");
+$result = mysqli_query($con, "SELECT * FROM warranty_claim");
 while ($row = mysqli_fetch_assoc($result)){
     ?>
     <!-- Modal -->
@@ -76,24 +82,24 @@ while ($row = mysqli_fetch_assoc($result)){
                             <td><?= $row['User_Name'] ?></td>
                         </tr>
                         <tr>
-                            <th>Emp_ID</th>
-                            <td><?= $row['Emp_ID'] ?></td>
+                            <th>Model_Name</th>
+                            <td><?= $row['Model_Name'] ?></td>
                         </tr>
                         <tr>
-                            <th>Designation</th>
-                            <td><?= $row['Designation'] ?></td>
+                            <th>Device_Serial</th>
+                            <td><?= $row['Device_Serial'] ?></td>
                         </tr>
                         <tr>
-                            <th>CPU Model</th>
-                            <td><?= $row['CPU_Model'] ?></td>
+                            <th>Asset_Tag</th>
+                            <td><?= $row['Asset_Tag'] ?></td>
                         </tr>
                         <tr>
-                            <th>CPU Asset Tag</th>
-                            <td><?= $row['CPU_Asset_Tag'] ?></td>
+                            <th>Department</th>
+                            <td><?= $row['Department'] ?></td>
                         </tr>
                         <tr>
-                            <th>CPU Serial</th>
-                            <td><?= $row['CPU_Serial'] ?></td>
+                            <th>Vendor_Name</th>
+                            <td><?= $row['Vendor_Name'] ?></td>
                         </tr>
                     </table>
                 </div>

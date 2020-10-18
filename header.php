@@ -124,6 +124,14 @@ $users_info = mysqli_fetch_assoc($data);
                             </li>
                             <li class="<?= $page == 'officer_page.php' ? 'active-item':'' ?>"><a href="officer_page.php"><i class="fa fa-user" aria-hidden="true"></i><span>Officer List</span></a></li>
                             <li class="<?= $page == 'inventory_page.php' ? 'active-item':'' ?>"><a href="inventory_page.php"><i class="fa fa-desktop" aria-hidden="true"></i><span>Inventory PC</span></a></li>
+                            <li class="<?= $page == 'online_ups_page.php' ? 'active-item':'' ?>"><a href="online_ups_page.php"><i class="fa fa-plug" aria-hidden="true"></i><span>3KVA Online UPS</span></a></li>
+                            <li class="has-child-item close-item <?= $page == 'add_claim.php' ? 'open-item':'' ?><?= $page == 'warranty_claim_page.php' ? 'open-item':'' ?>">
+                                <a><i class="fa fa-exclamation-circle" aria-hidden="true"></i><span>Warranty Claim</span></a>
+                                <ul class="nav child-nav level-1">
+                                    <li class="<?= $page == 'add_claim.php' ? 'active-item':'' ?>"><a href="add_claim.php"><i class="fa fa-plus" aria-hidden="true"></i><span>Add Claim</span></a></li>
+                                    <li class="<?= $page == 'warranty_claim_page.php' ? 'active-item':'' ?>"><a href="warranty_claim_page.php"><i class="fa fa-laptop" aria-hidden="true"></i><span>Warranty Status</span></a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </nav>
                 </div>
