@@ -78,10 +78,6 @@ while ($row = mysqli_fetch_assoc($result)){
                 <div class="modal-body">
                     <table class="table table-bordered">
                         <tr>
-                            <th>User_Name</th>
-                            <td><?= $row['User_Name'] ?></td>
-                        </tr>
-                        <tr>
                             <th>Model_Name</th>
                             <td><?= $row['Model_Name'] ?></td>
                         </tr>
@@ -94,12 +90,32 @@ while ($row = mysqli_fetch_assoc($result)){
                             <td><?= $row['Asset_Tag'] ?></td>
                         </tr>
                         <tr>
+                            <th>User_Name</th>
+                            <td><?= $row['User_Name'] ?></td>
+                        </tr>
+                        <tr>
                             <th>Department</th>
                             <td><?= $row['Department'] ?></td>
                         </tr>
                         <tr>
+                            <th>Mailing_Date</th>
+                            <td><?= $row['Mailing_Date'] ?></td>
+                        </tr>
+                        <tr>
+                            <th>Sending_Date</th>
+                            <td><?= $row['Sending_Date'] ?></td>
+                        </tr>
+                        <tr>
+                            <th>Return_Date</th>
+                            <td><?= $row['Return_Date'] ?></td>
+                        </tr>
+                        <tr>
                             <th>Vendor_Name</th>
                             <td><?= $row['Vendor_Name'] ?></td>
+                        </tr>
+                        <tr>
+                            <th>Remarks</th>
+                            <td><?= $row['Remarks'] ?></td>
                         </tr>
                     </table>
                 </div>
