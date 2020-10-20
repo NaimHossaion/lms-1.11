@@ -41,8 +41,8 @@
                                     <td><?= $row['CPU_Serial'] ?></td>
                                     <td><?= $row['OS'] ?></td>
                                     <td>
-                                        <a href="" data-toggle="modal" data-target="#Ref_ID-<?= $row['SL'] ?>"<i class="fa fa-eye"  data-toggle="tooltip" title="View Details"></i>&nbsp;</a>
-                                        <a href="" data-toggle="modal" data-target="#Incident_Update-<?= $row['SL'] ?>"><i class="fa fa-pencil-square-o" data-toggle="tooltip" title="Edit"></i>&nbsp;</a>
+                                        <a href="" data-toggle="modal" data-target="#Ref_ID-<?= $row['SL'] ?>"<i class="fa fa-eye"> View </i></a>
+                                        <a href="" data-toggle="modal" data-target="#Incident_Update-<?= $row['SL'] ?>"<i class="fa fa-pencil-square-o"> Edit </i></a>
                                     </td>
                                 </tr>
                                 <?php

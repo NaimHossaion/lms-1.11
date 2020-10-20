@@ -60,7 +60,7 @@
 $result = mysqli_query($con, "SELECT * FROM testing");
 while ($row = mysqli_fetch_assoc($result)){
     ?>
-    <!-- Modal -->
+    <!-- Modal Item VIEW -->
     <div class="modal fade" id="Ref_ID-<?= $row['Ref_ID'] ?>" tabindex="-1" role="dialog" aria-labelledby="modal-info-label">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

@@ -40,6 +40,12 @@
 <script src="javascripts/examples/dashboard.js"></script>
 <!--Gallery with Magnific popup-->
 <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+<!--morris chart-->
+<script src="vendor/chart-js/chart.min.js"></script>
+<!--Gallery with Magnific popup-->
+<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+<!--Notification msj-->
+<script src="vendor/toastr/toastr.min.js"></script>
 
 </body>
 </html>

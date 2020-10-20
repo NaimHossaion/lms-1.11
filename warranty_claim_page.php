@@ -22,8 +22,7 @@
                             <thead>
                             <tr>
                                 <th>Model_Name</th>
-                                <th>Device Serial</th>
-                                <th>Asset_Tag</th>
+                                <th>Vendor_Name</th>
                                 <th>User_Name</th>
                                 <th>Department</th>
                                 <th>Mailing_Date</th>
@@ -39,16 +38,15 @@
                                 ?>
                                 <tr>
                                     <td><?= $row['Model_Name'] ?></td>
-                                    <td><?= $row['Device_Serial'] ?></td>
-                                    <td><?= $row['Asset_Tag'] ?></td>
+                                    <td><?= $row['Vendor_Name'] ?></td>
                                     <td><?= $row['User_Name'] ?></td>
                                     <td><?= $row['Department'] ?></td>
                                     <td><?= $row['Mailing_Date'] ?></td>
                                     <td><?= $row['Sending_Date'] ?></td>
                                     <td><?= $row['Return_Date'] ?></td>
                                     <td>
-                                        <a href="" data-toggle="modal" data-target="#Ref_ID-<?= $row['SL'] ?>"<i class="fa fa-eye"  data-toggle="tooltip" title="View Details"></i>&nbsp;</a>
-                                        <a href="" data-toggle="modal" data-target="#Incident_Update-<?= $row['SL'] ?>"><i class="fa fa-pencil-square-o" data-toggle="tooltip" title="Edit"></i>&nbsp;</a>
+                                        <a href="" data-toggle="modal" data-target="#Ref_ID-<?= $row['SL'] ?>"<i class="fa fa-eye"> View </i></a>
+                                        <a href="" data-toggle="modal" data-target="#Incident_Update-<?= $row['SL'] ?>"<i class="fa fa-pencil-square-o"> Edit </i></a>
                                     </td>
                                 </tr>
                                 <?php
@@ -128,5 +126,7 @@ while ($row = mysqli_fetch_assoc($result)){
     <?php
 }
 ?>
+
+
 
 <?php require_once 'footer.php'; ?>

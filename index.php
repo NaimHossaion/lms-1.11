@@ -12,6 +12,8 @@
                 </div>
                 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
                 <div class="row animated fadeInUp">
+                    <!--WIDGET BOX STYLE, Row 1-->
+                    <h4 class="section-subtitle"><b>Inventory</b> Desktop, Laptop and Online UPS</h4>
                     <div class="col-sm-12">
                         <div class="row">
                             <?php
@@ -40,18 +42,24 @@
                                     </a>
                                 </div>
                             </div>
+
+                            <?php
+                            $users = mysqli_query($con, "SELECT * FROM `inventory_pc`");
+                            $total_users = mysqli_num_rows($users);
+                            ?>
                             <!--BOX Style 1-->
                             <div class="col-sm-6 col-md-4 col-lg-3">
                                 <div class="panel widgetbox wbox-1 bg-lighter-2 color-light">
-                                    <a href="#">
+                                    <a href="inventory_page.php">
                                         <div class="panel-content">
-                                            <h1 class="title color-darker-2"> <i class="fa fa-user"></i> 105 </h1>
-                                            <h4 class="subtitle color-darker-1">New Users</h4>
+                                            <h1 class="title color-darker-2"> <i class="fa fa-desktop"></i> <?= $total_users; ?>  </h1>
+                                            <h4 class="subtitle color-darker-1">Total Workstations</h4>
                                         </div>
                                     </a>
                                 </div>
                             </div>
-
+                            <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+                            <!--WIDGET BOX STYLE, Row 2-->
                         </div>
                     </div>
                 </div>

@@ -107,10 +107,7 @@ if(isset($_POST['add_claim'])){
                                 <div class="form-group">
                                     <label for="default-datepicker" class="col-sm-4 control-label ">Mailing_Date</label>
                                     <div class="col-sm-5">
-                                        <div class="input-group">
-                                            <span class="input-group-addon x-primary"><i class="fa fa-calendar"></i></span>
-                                            <input type="date" name="Mailing_Date" class="form-control" id="default-datepicker" required>
-                                        </div>
+                                        <input type="date" name="Mailing_Date" class="form-control" id="default-datepicker" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -118,9 +115,9 @@ if(isset($_POST['add_claim'])){
                                     <div class="col-sm-8">
                                         <select name="Vendor_Name" id="email2" class="form-control" style="width: 100%">
                                             <option value="" label=""></option>
-                                            <option value="SMS System" label="SMS System">SMS System</option>
-                                            <option value="Thakral" label="Thakral">Thakral</option>
-                                            <option value="Pakiza" label="Pakiza">Pakiza</option>
+                                            <option value="SMS Systems">SMS Systems</option>
+                                            <option value="Thakral Information Systems">Thakral Information Systems</option>
+                                            <option value="Pakiza Technovation Limited">Pakiza Technovation Limited</option>
                                         </select>
                                     </div>
                                 </div>
