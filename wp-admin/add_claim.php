@@ -67,7 +67,7 @@ if(isset($_POST['add_claim'])){
                     <div class="row">
                         <div class="col-md-12">
                             <form class="form-horizontal" method="POST" action="<?= $_SERVER['PHP_SELF'] ?>">
-                                <h5 class="mb-lg">Add Device for Warranty Claim</h5>
+                                <h5 class="mb-lg">Add Warranty Claim</h5>
                                 <div class="form-group">
                                     <label for="password2" class="col-sm-4 control-label">Incident</label>
                                     <div class="col-sm-8">
@@ -75,27 +75,27 @@ if(isset($_POST['add_claim'])){
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="password2" class="col-sm-4 control-label">Model_Name</label>
+                                    <label for="password2" class="col-sm-4 control-label">Model Name</label>
                                     <div class="col-sm-8">
-                                        <input type="text" name="Model_Name" class="form-control" id="password2" placeholder="Model_Name" required>
+                                        <input type="text" name="Model_Name" class="form-control" id="password2" placeholder="Model Name" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="password2" class="col-sm-4 control-label">Device_Serial</label>
+                                    <label for="password2" class="col-sm-4 control-label">Device Serial</label>
                                     <div class="col-sm-8">
-                                        <input type="text" name="Device_Serial" class="form-control" id="password2" placeholder="Device_Serial" required>
+                                        <input type="text" name="Device_Serial" class="form-control" id="password2" placeholder="Device Serial" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="password2" class="col-sm-4 control-label">Asset_Tag</label>
+                                    <label for="password2" class="col-sm-4 control-label">Asset Tag</label>
                                     <div class="col-sm-8">
-                                        <input type="text" name="Asset_Tag" class="form-control" id="password2" placeholder="Asset_Tag">
+                                        <input type="text" name="Asset_Tag" class="form-control" id="password2" placeholder="Asset Tag">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="password2" class="col-sm-4 control-label">User_Name</label>
+                                    <label for="password2" class="col-sm-4 control-label">User Name</label>
                                     <div class="col-sm-8">
-                                        <input type="text" name="User_Name" class="form-control" id="password2" placeholder="User_Name">
+                                        <input type="text" name="User_Name" class="form-control" id="password2" placeholder="User Name">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -105,13 +105,13 @@ if(isset($_POST['add_claim'])){
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="default-datepicker" class="col-sm-4 control-label ">Mailing_Date</label>
+                                    <label for="default-datepicker" class="col-sm-4 control-label ">Mailing Date</label>
                                     <div class="col-sm-5">
                                         <input type="date" name="Mailing_Date" class="form-control" id="default-datepicker" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="email2" class="col-sm-4 control-label">Vendor_Name</label>
+                                    <label for="email2" class="col-sm-4 control-label">Vendor Name</label>
                                     <div class="col-sm-5">
                                         <select name="Vendor_Name" id="email2" class="form-control" style="width: 100%">
                                             <option value="" disabled selected hidden>Choose Vendor Name</option>
@@ -122,7 +122,7 @@ if(isset($_POST['add_claim'])){
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="password2" class="col-sm-4 control-label">Remarks</label>
+                                    <label for="password2" class="col-sm-4 control-label">Remarks/Problem</label>
                                     <div class="col-sm-8">
                                         <input type="text" name="Remarks" class="form-control" id="password2" placeholder="Problem Description" required>
                                     </div>

@@ -31,13 +31,18 @@
                                     </a>
                                 </div>
                             </div>
+
+                            <?php
+                            $claims = mysqli_query($con, "SELECT * FROM `warranty_claim` WHERE Status = '1'");
+                            $total_claims = mysqli_num_rows($claims);
+                            ?>
                             <!--BOX Style 1-->
                             <div class="col-sm-6 col-md-4 col-lg-3">
                                 <div class="panel widgetbox wbox-1 bg-darker-2 color-light">
                                     <a href="#">
                                         <div class="panel-content">
-                                            <h1 class="title color-light-1"> <i class="fa fa-envelope"></i> 124 </h1>
-                                            <h4 class="subtitle">New Messages</h4>
+                                            <h1 class="title color-light-1"> <i class="fa fa-envelope"></i> <?= $total_claims; ?> </h1>
+                                            <h4 class="subtitle">Warranty Claim</h4>
                                         </div>
                                     </a>
                                 </div>

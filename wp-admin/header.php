@@ -122,9 +122,6 @@ $users_info = mysqli_fetch_assoc($data);
                                     <li class="<?= $page == 'all-incidents.php' ? 'active-item':'' ?>"><a href="all-incidents.php"><i class="fa fa-server" aria-hidden="true"></i><span>All Incidents</span></a></li>
                                 </ul>
                             </li>
-                            <li class="<?= $page == 'officer_page.php' ? 'active-item':'' ?>"><a href="officer_page.php"><i class="fa fa-user" aria-hidden="true"></i><span>Officer List</span></a></li>
-                            <li class="<?= $page == 'inventory_page.php' ? 'active-item':'' ?>"><a href="inventory_page.php"><i class="fa fa-desktop" aria-hidden="true"></i><span>Inventory PC</span></a></li>
-                            <li class="<?= $page == 'online_ups_page.php' ? 'active-item':'' ?>"><a href="online_ups_page.php"><i class="fa fa-plug" aria-hidden="true"></i><span>3KVA Online UPS</span></a></li>
                             <li class="has-child-item close-item <?= $page == 'add_claim.php' ? 'open-item':'' ?><?= $page == 'warranty_claim_page.php' ? 'open-item':'' ?>">
                                 <a><i class="fa fa-exclamation-circle" aria-hidden="true"></i><span>Warranty Claim</span></a>
                                 <ul class="nav child-nav level-1">
@@ -132,6 +129,10 @@ $users_info = mysqli_fetch_assoc($data);
                                     <li class="<?= $page == 'warranty_claim_page.php' ? 'active-item':'' ?>"><a href="warranty_claim_page.php"><i class="fa fa-laptop" aria-hidden="true"></i><span>Warranty Status</span></a></li>
                                 </ul>
                             </li>
+                            <li class="<?= $page == 'officer_page.php' ? 'active-item':'' ?>"><a href="officer_page.php"><i class="fa fa-user" aria-hidden="true"></i><span>Officer List</span></a></li>
+                            <li class="<?= $page == 'inventory_page.php' ? 'active-item':'' ?>"><a href="inventory_page.php"><i class="fa fa-desktop" aria-hidden="true"></i><span>Inventory PC</span></a></li>
+                            <li class="<?= $page == 'online_ups_page.php' ? 'active-item':'' ?>"><a href="online_ups_page.php"><i class="fa fa-plug" aria-hidden="true"></i><span>3KVA Online UPS</span></a></li>
+                            <li class="<?= $page == 'all_users.php' ? 'active-item':'' ?>"><a href="all_users.php"><i class="fa fa-group" aria-hidden="true"></i><span>All Users</span></a></li>
                         </ul>
                     </nav>
                 </div>
