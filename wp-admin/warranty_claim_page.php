@@ -28,6 +28,7 @@
                                 <th>Mailing_Date</th>
                                 <th>Sending_Date</th>
                                 <th>Return_Date</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -44,6 +45,7 @@
                                     <td><?= $row['Mailing_Date'] ?></td>
                                     <td><?= $row['Sending_Date'] ?></td>
                                     <td><?= $row['Return_Date'] ?></td>
+                                    <td><?= $row['Status'] == 1 ? '<span class="badge badge-xs x-success">Resolved</span>' : '<span class="badge badge-xs x-warning">Pending</span>' ?></td>
                                     <td>
                                         <a href="" data-toggle="modal" data-target="#Ref_ID-<?= $row['SL'] ?>"<i class="fa fa-eye"> View </i></a>
                                         <a href="" data-toggle="modal" data-target="#Incident_Update-<?= $row['SL'] ?>"<i class="fa fa-pencil-square-o"> Edit </i></a>
