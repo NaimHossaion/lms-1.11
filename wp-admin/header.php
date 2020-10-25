@@ -133,6 +133,13 @@ $users_info = mysqli_fetch_assoc($data);
                             <li class="<?= $page == 'inventory_page.php' ? 'active-item':'' ?>"><a href="inventory_page.php"><i class="fa fa-desktop" aria-hidden="true"></i><span>Inventory PC</span></a></li>
                             <li class="<?= $page == 'online_ups_page.php' ? 'active-item':'' ?>"><a href="online_ups_page.php"><i class="fa fa-plug" aria-hidden="true"></i><span>3KVA Online UPS</span></a></li>
                             <li class="<?= $page == 'all_users.php' ? 'active-item':'' ?>"><a href="all_users.php"><i class="fa fa-group" aria-hidden="true"></i><span>All Users</span></a></li>
+                            <li class="has-child-item close-item <?= $page == 'incident_add_ups.php' ? 'open-item':'' ?><?= $page == 'incident_ups.php' ? 'open-item':'' ?>">
+                                <a><i class="fa fa-power-off" aria-hidden="true"></i><span>650VA UPS</span></a>
+                                <ul class="nav child-nav level-1">
+                                    <li class="<?= $page == 'incident_add_ups.php' ? 'active-item':'' ?>"><a href="incident_add_ups.php"><i class="fa fa-plus" aria-hidden="true"></i><span>Add UPS</span></a></li>
+                                    <li class="<?= $page == 'incident_ups.php' ? 'active-item':'' ?>"><a href="incident_ups.php"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span>UPS Status</span></a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </nav>
                 </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2020 at 06:29 AM
+-- Generation Time: Oct 25, 2020 at 12:58 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -68,6 +68,144 @@ CREATE TABLE `incidents` (
   `Remarks` varchar(30) NOT NULL,
   `Date_Time` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `inventory_offline_ups`
+--
+
+CREATE TABLE `inventory_offline_ups` (
+  `Ref_ID` int(10) NOT NULL,
+  `Issue_Date` date DEFAULT NULL,
+  `Follow_Up` varchar(30) NOT NULL,
+  `Incident_No` varchar(30) NOT NULL,
+  `Branch_Name` varchar(30) NOT NULL,
+  `Department` varchar(30) NOT NULL,
+  `User_Name` varchar(30) NOT NULL,
+  `UPS_Model` varchar(30) NOT NULL,
+  `UPS_Serial` varchar(30) NOT NULL,
+  `Status` varchar(30) NOT NULL,
+  `Problem_Description` varchar(100) NOT NULL,
+  `Delivery_Date` date DEFAULT NULL,
+  `Remarks` varchar(30) NOT NULL,
+  `Is_Repaired` varchar(30) NOT NULL,
+  `Mail_Sent` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `inventory_offline_ups`
+--
+
+INSERT INTO `inventory_offline_ups` (`Ref_ID`, `Issue_Date`, `Follow_Up`, `Incident_No`, `Branch_Name`, `Department`, `User_Name`, `UPS_Model`, `UPS_Serial`, `Status`, `Problem_Description`, `Delivery_Date`, `Remarks`, `Is_Repaired`, `Mail_Sent`) VALUES
+(1, '2020-09-06', 'Khandaker Naim Hossaion', '12202', 'HO', 'Operations', 'Shahadat Hossain', 'ideal', '9685', 'Waiting', 'Backup: Repaired 14-09-20', '2020-09-06', '-', 'Support UPS Provided', 'Yes'),
+(2, '2020-09-08', 'Saqueeb Mohammad Sultan', '12230', 'HO/Operations', 'Investment Bond Ops', 'Rezwan Al Sabab', 'Waiting', '5620', 'Support sn: 4543', 'Backup; Repaired 14-09-20', '2020-09-08', '-', 'Support UPS Provided', 'Yes'),
+(3, '2020-09-09', 'Saqueeb Mohammad Sultan', '12313', 'HO/Operations', 'Service Delivery Dhaka', 'Ayesha Akhter', 'Ideal', '85049', 'Support -Ideal-60222', 'Backup; Repaired 14-09-20', '2020-09-09', '-', 'Support UPS Provided', 'Yes'),
+(4, '2020-02-26', 'Fouzia Sharmin Zimi', '8598', 'Gulshan, sabera tower', 'Cards', 'Md. Shirajul Islam', 'ideal', '2487', 'SUPPORT IDEAL SN : 2710', 'BATTERY', '2020-02-26', '-', 'Replaced Permanently', 'No'),
+(5, '2020-06-14', 'Saqueeb Mohammad Sultan', '10005', 'Mawna', 'RB', 'Zaheed Akhtar', 'IDEAL', '3588', 'Waiting', 'BATTERY', '2020-06-17', '-', 'Replaced Permanently', 'No'),
+(6, '2020-06-15', 'Saqueeb Mohammad Sultan', '10008', 'Mawna', 'RB', 'Zaheed Akhtar', 'IDEAL', '1162', 'Waiting', 'BATTERY', '2020-06-18', '-', 'Replaced Permanently', 'No'),
+(7, '2020-06-15', 'Saqueeb Mohammad Sultan', '10007', 'Mawna', 'RB', 'Zaheed Akhtar', 'IDEAL', '1848', 'Waiting', 'BATTERY', '2020-06-18', '-', 'Replaced Permanently', 'No'),
+(8, '2020-06-15', 'Saqueeb Mohammad Sultan', '10006', 'Mawna', 'RB', 'Zaheed Akhtar', 'IDEAL', '4231', 'Waiting', 'BATTERY', '2020-06-17', '-', 'Replaced Permanently', 'No'),
+(9, '2020-06-30', 'Saqueeb Mohammad Sultan', '10345', 'Gulshan/RB', 'Gulshan/RB', 'Md. Saif Anwar', 'Waiting', '1024', 'Waiting', 'BATTERY', '2020-07-06', '-', 'Replaced Permanently', 'Yes'),
+(10, '2020-06-11', 'Saqueeb Mohammad Sultan', '10012', 'GULSHAN', 'SAMD', 'JELIM TAMANNA', 'IDEAL 03 UNIT', 'Waiting', 'Waiting', 'BATTERY', '2020-06-18', '-', 'Support UPS Provided', 'Yes'),
+(11, '2020-06-15', 'Saqueeb Mohammad Sultan', '10036', 'Operations', 'Operations', 'Khandaker Md Mahbub -A-Khoda', 'IDEAL', '4738', 'Waiting', 'BATTERY', '2020-06-22', '-', 'Yes', 'No'),
+(12, '2020-06-21', 'Saqueeb Mohammad Sultan', '10151', 'HO/Operations', 'Operations', 'Tawhid Rahman Saad', 'IDEAL', '6640', 'Waiting', 'BATTERY', '2020-06-23', '-', 'Yes', 'Yes'),
+(13, '2020-08-16', 'Saqueeb Mohammad Sultan', '11500', 'Gulshan/Digital Channels', 'Digital Channels', 'Md. Ashrafuzzaman', 'IDEAL', '7647', 'Waiting', 'BATTERY', '2020-08-23', '-', 'Yes', 'Yes'),
+(14, '2020-06-21', 'Saqueeb Mohammad Sultan', '10052', 'SAMD', 'Special Asset Management', 'Nazmul Hasan', 'IDEAL', 'Waiting', 'Waiting', 'BATTERY PROBLEM', '2020-06-25', '-', 'Yes', 'No'),
+(15, '2020-06-10', 'Saqueeb Mohammad Sultan', '9973', 'Digital Channels', 'Digital Channels', 'H. M. Sarowar Mondal', 'IDEAL', '156', 'Battery Problem', 'BATTERY PROBLEM', '2020-06-15', '-', 'Yes', 'Yes'),
+(16, '2020-06-11', 'Saqueeb Mohammad Sultan', '9949', 'Gulshan Avenue Branch', 'RB', 'Sonjoy Chandra Das', 'IDEAL', '3067', 'Waiting', 'BATTERY PROBLEM', '2020-06-22', '-', 'Yes', 'Yes'),
+(17, '2020-06-18', 'Saqueeb Mohammad Sultan', '9760', 'RB/Bhulta Branch', 'RB/Bhulta Branch', 'Alif Hossain', 'IDEAL', '4254', 'Waiting', 'BATTREY', '2020-06-22', '-', 'Replaced Permanently', 'No'),
+(18, '2020-02-25', 'Fouzia Sharmin Zimi', '8549', 'HO/Operations', 'HO/Operations', 'Uzzal Kumar Mukharjee', 'IDEAL', '736', 'SUPPORT IDEAL 1606', 'BATTRY', '2020-02-25', '-', 'Replaced Permanently', 'No'),
+(19, '2020-08-23', 'Saqueeb Mohammad Sultan', '11530', 'HO/Operations', 'HO/Operations', 'Afsaruzzaman', 'POWER TREE', '4564', 'SUPPORT IDEAL SN:  3491', 'NO BACKUP', '2020-08-23', '-', 'Out of Order', 'Not Required'),
+(20, '2020-08-20', 'Saqueeb Mohammad Sultan', '11729', 'HO/Operations', 'HO/Operations', 'Rezaul Karim', 'Waiting', '780', 'SUPPORT IDEAL SN: 8054', 'NO BACKUP', '2020-08-23', '-', 'Support UPS Provided', 'Not Required'),
+(21, '2020-08-23', 'Saqueeb Mohammad Sultan', '11725', 'HO/Operations', 'HO/Operations', 'Kazori Akhtar', 'IDEAL', '3651', 'Waiting', 'Not checked Ye', '2020-08-25', '-', 'Yes', 'Yes'),
+(22, '2020-08-20', 'Syed Mukhaffar Abdullah', '0', 'HEAD OFFICE', 'L-12', 'MD SIR', '(SEND TO MARUF)', '5528/5526', 'Waiting', 'Not checked Yet', '2020-08-20', '-', 'New UPS Provided Permanently', 'Not Required'),
+(23, '2020-09-16', 'Saqueeb Mohammad Sultan', '12442', 'HO/Operations', 'Item Processing Unit', 'Moniruzzaman', 'ideal', '432372', 'Waiting', 'Not checked Yet', '0000-00-00', '-', 'Out of Order', 'Not Required'),
+(24, '2020-10-15', 'Saqueeb Mohammad Sultan', '13362', 'Alauddin Tower - 2 units', 'Retail Risk', 'Shafin Md. Imran Waiz', 'ideal', '1615/2373', 'Waiting', 'Not checked Yet', '0000-00-00', '-', 'Out of Order', 'Not Required'),
+(25, '2020-10-18', 'Saqueeb Mohammad Sultan', '13291', 'Gulshan/Cards', 'Gulshan/Cards', 'Md. Mostakim Hossain', 'ideal', '2764', 'Waiting', 'Not checked Yet', '0000-00-00', '-', 'Out of Order', 'Not Required'),
+(26, '2020-07-26', 'Saqueeb Mohammad Sultan', '10995', 'RB/Shyamoli Branch', 'RB/Shyamoli Branch', 'Zobaer Rashid', 'Waiting', '607', 'Waiting', 'Not checked Yet', '0000-00-00', '-', 'Replaced Permanently', 'Pending'),
+(27, '2020-06-18', 'Saqueeb Mohammad Sultan', '10035', 'Operations', 'Operations', 'Kazori Akhtar', 'Waiting', '3651', 'BATTERY', 'Not checked Yet', '2020-07-06', '-', 'Replaced Permanently', 'No'),
+(28, '2020-07-15', 'Saqueeb Mohammad Sultan', '10908', 'RB/Shyamoli Branch', 'RB/Shyamoli Branch', 'Munzurul Hayat - 8859', 'Waiting', '2591', 'Waiting', 'Not checked Yet', '2020-07-27', '-', 'Replaced Permanently', 'Not Required'),
+(29, '2020-06-18', 'Saqueeb Mohammad Sultan', '10090', 'SAM', 'SAM', 'Suraiya Yesmin Shathi', 'IDEAL', '1862', 'Waiting', 'Not checked Yet', '2020-07-05', '-', 'Replaced Permanently', 'Yes'),
+(30, '2020-06-28', 'Saqueeb Mohammad Sultan', '10145', 'SAM', 'SAM', 'Sonima Purba', 'Waiting', 'Waiting', 'Waiting', 'Not checked Yet', '2020-07-05', '-', 'Replaced Permanently', 'Yes'),
+(31, '2020-06-29', 'Saqueeb Mohammad Sultan', '10311', 'SAMD - 2 units', 'SAMD - 2 units', 'Sadia Tusrin', 'Waiting', '3326/5086', 'Waiting', 'Not checked Yet', '2020-07-06', '-', 'Replaced Permanently', 'Yes'),
+(32, '2020-06-30', 'Saqueeb Mohammad Sultan', '10303', 'HO/Operations', 'HO/Operations', 'Mahmudul Haque', 'Waiting', '4526', 'BATTERY', 'Not checked Yet', '2020-07-06', '-', 'Replaced Permanently', 'Yes'),
+(33, '2020-07-05', 'Saqueeb Mohammad Sultan', '0', 'HEAD OFFICE', 'HR', 'SURAIYA MOU', 'Waiting', '309', 'battery', 'Not checked Yet', '2020-07-07', '-', 'Replaced Permanently', 'Yes'),
+(34, '2020-07-14', 'Saqueeb Mohammad Sultan', '10632', 'RB/Bhulta', 'RB/Bhulta', 'Mohammad Zaherul Islam', 'Waiting', 'Waiting', 'Waiting', 'Not checked Yet', '2020-07-16', '-', 'Replaced Permanently', 'Yes'),
+(35, '2020-07-15', 'Saqueeb Mohammad Sultan', '10651', 'Principal Branch', 'RB/Principal Branch', 'Shahidul Islam', 'Waiting', '4096', 'Waiting', 'Not checked Yet', '2020-07-20', '-', 'Replaced Permanently', 'Yes'),
+(36, '2020-07-30', 'Saqueeb Mohammad Sultan', '11257', 'Satmasjid Road', 'RB', 'Wasifur Rahman', 'IDEAL', '780', 'BATTERY', 'Not checked Yet', '2020-09-07', '-', 'Replaced Permanently', 'Yes'),
+(37, '2020-08-06', 'Saqueeb Mohammad Sultan', '11287', 'HO/Operations', 'HO/Operations', 'Mostafa Asif Iqbal', 'Waiting', '51606', 'Waiting', 'Not checked Yet', '2020-08-09', '-', 'Replaced Permanently', 'Yes'),
+(38, '2020-08-10', 'Saqueeb Mohammad Sultan', '11436', 'Ponchoboti Branch', 'RB', 'Arshaduz Zaman', 'Waiting', '1737', 'Waiting', 'Not checked Yet', '2020-08-10', '-', 'Replaced Permanently', 'Yes'),
+(39, '2020-08-10', 'Saqueeb Mohammad Sultan', '11422', 'HO/Operations', 'Trade Operations', 'Rezaul Karim', 'Waiting', 'Waiting', 'Waiting', 'Not checked Yet', '2020-08-16', '-', 'Replaced Permanently', 'Yes'),
+(40, '2020-08-16', 'Saqueeb Mohammad Sultan', '11530', 'HO/Operations', 'Trade Operations', 'Afsaruzzaman', 'Waiting', '4564', 'Waiting', 'Not checked Yet', '2020-08-18', '-', 'Replaced Permanently', 'Yes'),
+(41, '2020-08-17', 'Saqueeb Mohammad Sultan', '11612', 'HO\\TSD', 'HO\\TSD', 'Tanvir Tausif', 'Waiting', '2447', 'Waiting', 'Not checked Yet', '2020-08-18', '-', 'Replaced Permanently', 'Yes'),
+(42, '2020-08-18', 'Saqueeb Mohammad Sultan', '11662', 'GULSHAN RB', 'GULSHAN RB', 'ABU RASEL MD MASUM', 'Waiting', '5782', 'Support ideal8191', 'Not checked Yet', '2020-08-18', '-', 'Replaced Permanently', 'Yes'),
+(43, '2020-08-18', 'Saqueeb Mohammad Sultan', '11656', 'HO/Admin', 'Admin', 'Atik Khan', 'POWER TREE', '5946', 'SUPPORT UPS 5780', 'Not checked Yet', '2020-08-18', '-', 'Replaced Permanently', 'Yes'),
+(44, '2020-03-02', 'Fouzia Sharmin Zimi', '8624', 'ho', 'RRR', 'Shad Bhowmik', 'Waiting', 'Waiting', 'Waiting', 'Not checked Yet', '0000-00-00', '-', 'Support UPS Provided', 'No'),
+(45, '2020-06-15', 'Saqueeb Mohammad Sultan', '10092', 'Admin', 'Admin', 'Rafiqul Islam', 'IDEAL', 'Waiting', 'Waiting', 'Not checked Yet', '2020-06-18', '-', 'Support UPS Provided', 'No'),
+(46, '2020-02-16', 'Sabit Bin Kabir', '8237', 'Head Office', 'Operations', 'Minhazul Arefin', 'SUPPORT UPS SN:1862', '5403', 'Waiting', 'Not checked Yet', '2020-02-16', '-', 'Support UPS Provided', 'Not Required'),
+(47, '2020-02-17', 'Saqueeb Mohammad Sultan', '11672', 'HO/Operations', 'HO/Operations', 'Minhazul Arefin', '', '3882', 'old ticket 8237', 'Not checked Yet', '2020-08-19', '-', 'Support UPS Provided', 'Yes'),
+(48, '2020-07-29', 'Saqueeb Mohammad Sultan', '11081', 'RB/Gulshan', 'RB/Gulshan', 'Bakar Hasan Khan', 'POWER TREE', '17060', 'Waiting', 'Not checked Yet', '2020-10-07', '-', 'Support UPS Provided', 'Yes'),
+(49, '2020-07-30', 'Saqueeb Mohammad Sultan', '10977', 'Payroll', 'Payroll', 'Sanjida Alam', 'Waiting', '48A6', 'Waiting', 'Not checked Yet', '2020-08-17', '-', 'Yes', 'No'),
+(50, '2020-08-31', 'Saqueeb Mohammad Sultan', '11617', 'HO/OPS', 'HO/OPS', 'Nayeem Afroz Khan Hossaini', 'IDEAL', '3692', 'BATTERY', 'Not checked Yet', '2020-09-08', '-', 'Yes', 'No'),
+(51, '2020-07-06', 'Saqueeb Mohammad Sultan', '10470', 'Khilgaon Branch-3 units', 'RB/Khilgaon Branch-3 units', 'Safath Jamil Chowdhury', 'Waiting', 'Waiting', 'Waiting', 'Not checked Yet', '2020-07-06', '-', 'Yes', 'Yes'),
+(52, '2020-06-17', 'Saqueeb Mohammad Sultan', '10137', 'SAMD', 'SAMD - 2 units', 'Jelim Tamanna', 'Waiting', 'Waiting', 'Waiting', 'Not checked Yet', '2020-06-23', '-', 'Yes', 'Yes'),
+(53, '2020-06-21', 'Fouzia Sharmin Zimi', '10152', 'Gulshan Avenue 2 units', 'RB/Gulshan Avenue Branch', 'Sonjoy Chandra Das', 'Waiting', 'Waiting', 'Waiting', 'Not checked Yet', '2020-06-24', '-', 'Yes', 'Yes'),
+(54, '2020-06-21', 'Saqueeb Mohammad Sultan', '10133', 'Cards Operations/ Gulshan', 'Cards Operations/ Gulshan', 'George Frank Nelson', 'Waiting', 'Waiting', 'Waiting', 'Not checked Yet', '2020-06-22', '-', 'Yes', 'Yes'),
+(55, '2020-06-22', 'Saqueeb Mohammad Sultan', '10179', 'Banasree - 2 units', 'RB', 'Maniruzzaman', 'Waiting', 'Waiting', 'Waiting', 'Not checked Yet', '2020-06-23', '-', 'Yes', 'Yes'),
+(56, '2020-06-30', 'Saqueeb Mohammad Sultan', '10397', 'Gulshan/SAMD', 'Gulshan/SAMD', 'Jelim Tamanna', 'Waiting', 'Waiting', 'Waiting', 'Not checked Yet', '2020-07-07', '-', 'Yes', 'Yes'),
+(57, '2020-06-30', 'Saqueeb Mohammad Sultan', '10360', 'Finance', 'Finance', 'Mouri Rezwana', 'Waiting', 'Waiting', 'BATTERY PROBLEM', 'Not checked Yet', '2020-07-05', '-', 'Yes', 'Yes'),
+(58, '2020-07-29', 'Saqueeb Mohammad Sultan', '11238', 'CMO - 2units', 'Operations - 2units', 'Fahmida Jahan Soruvi', 'Waiting', '4201', 'Waiting', 'Not checked Yet', '2020-08-09', '-', 'Yes', 'Yes'),
+(59, '2020-08-03', 'Saqueeb Mohammad Sultan', '11208', 'Principal Branch', 'RB', 'Sohrab Hossain', 'Waiting', '5600', 'Waiting', 'Not checked Yet', '2020-08-09', '-', 'Yes', 'Yes'),
+(60, '2020-08-03', 'Saqueeb Mohammad Sultan', '11088', 'HO/Operations', 'Cash Management Operations (Op', 'Ashrafuzzaman', 'Waiting', '6312', 'Waiting', 'Not checked Yet', '2020-08-03', '-', 'Yes', 'Yes'),
+(61, '2020-08-17', 'Saqueeb Mohammad Sultan', '11618', 'HO/Operations', 'Trade Operations', 'Tanzena Islam', 'Waiting', '3024', 'Waiting', 'Not checked Yet', '2020-08-19', '-', 'Yes', 'Yes'),
+(62, '2020-08-24', 'Saqueeb Mohammad Sultan', '11810.2', 'Digital Channels', 'Digital Channels', 'Tasnim Mehedi', 'star', '81A6', 'BATTERY', 'Not checked Yet', '2020-09-03', '-', 'Yes', 'Yes'),
+(63, '2020-08-24', 'Saqueeb Mohammad Sultan', '11810.1', 'Digital Channels', 'Digital Channels', 'Md. Moniruzzaman', 'Fowrtree', '7367', 'BATTERY', 'Not checked Yet', '2020-09-03', '-', 'Yes', 'Yes'),
+(64, '2020-08-24', 'Saqueeb Mohammad Sultan', '11805.3', 'Cards Sales', 'Cards Sales', 'Jafar SadequeBinShams', 'ideal', '1109', 'Waiting', 'Not checked Yet', '2020-09-02', '-', 'Yes', 'Yes'),
+(65, '2020-08-26', 'Saqueeb Mohammad Sultan', '11735', 'Gulshan/RB', 'Gulshan/RB', 'Saad Sikder', 'IDEAL', '3052', 'Waiting', 'Not checked Yet', '2020-09-01', '-', 'Yes', 'Yes'),
+(66, '2020-08-31', 'Saqueeb Mohammad Sultan', '12012', 'HO/Retail Risk', 'HO/Retail Risk', 'Shafin Md. Imran Waiz', 'ideal', '245', 'Waiting', 'Not checked Yet', '2020-10-04', '-', 'Yes', 'Yes'),
+(67, '2020-09-01', 'Saqueeb Mohammad Sultan', '12018', 'HO/Operations', 'HO/Operations', 'Khairul Jahan', 'IDEAL 5306B', '8297', 'BATTERY', 'Not checked Yet', '0000-00-00', '-', 'Yes', 'Yes'),
+(68, '2020-09-14', 'Saqueeb Mohammad Sultan', '12470', 'Ponchoboti', 'RB', 'Asif Hossain', 'IDEAL', '951737', 'SUPPORT IDEAL 00133', 'Not checked Yet', '2020-09-14', '-', 'Yes', 'Yes'),
+(69, '2020-09-15', 'Saqueeb Mohammad Sultan', '12469', 'Gulshan', 'Cards', 'Md. Mostakim Hossain', 'Waiting', '712764', 'battery', 'Not checked Yet', '2020-09-24', '-', 'Yes', 'Yes'),
+(70, '2020-09-20', 'Saqueeb Mohammad Sultan', '12661', 'RB/Savar', 'RB/Savar', 'Rubaiyyat Ahsanul Habib', 'Powertree Plus', 'E1706005945', 'Waiting', 'Not checked Yet', '2020-10-01', '-', 'Yes', 'Yes'),
+(71, '2020-09-21', 'Saqueeb Mohammad Sultan', '12718', 'HO/IT', 'HO/IT', 'Ridwan Al Galib', 'IDEAL', '13194966373', 'Support UPS Power tree plus', 'Not checked Yet', '2020-09-21', '-', 'Yes', 'Yes'),
+(72, '2020-09-23', 'Saqueeb Mohammad Sultan', '12659', 'Bhulta Branch', 'RB/Bhulta Branch', 'Emran Hossain', 'Ideal', '8360449826', 'SUPPORT IDEAL S/N:1864', 'Not checked Yet', '0000-00-00', '-', 'Yes', 'Yes'),
+(73, '2020-09-27', 'Saqueeb Mohammad Sultan', '12617', 'Gulshan/CAD', 'Gulshan/CAD', 'Harunur Rashid', 'Flora', '73679', 'BATTERY PROBLEM', 'Not checked Yet', '2020-10-01', '-', 'Yes', 'Yes'),
+(74, '2020-09-27', 'Saqueeb Mohammad Sultan', '12615', 'Gulshan/CAD', 'CAD', 'Abu Zakaria', 'Star', '26A6', 'Waiting', 'Not checked Yet', '0000-00-00', '-', 'Yes', 'Yes'),
+(75, '2020-10-13', 'Saqueeb Mohammad Sultan', '12339', 'Gulshan/Operations - 2units', 'Operations - 2 units', 'Razib Chandra Dhar', 'ideal back to back/STAR', '449689/4383a6', 'BATTERY', 'Not checked Yet', '2020-10-20', '-', 'Yes', 'Yes'),
+(76, '2020-10-14', 'Saqueeb Mohammad Sultan', '13654', 'Retail/Payroll', 'Retail/Payroll', 'Meher Afjun Sarker', 'IDEAL', '1335543L593', 'BATTERY', 'Not checked Yet', '0000-00-00', '-', 'Yes', 'Yes'),
+(77, '2020-10-15', 'Saqueeb Mohammad Sultan', '13727', 'Gulshan/Ops', 'Operations', 'Kulsum Akter', 'Waiting', 'Waiting', 'Waiting', 'Not checked Yet', '2020-10-15', '-', 'Yes', 'Yes'),
+(78, '2020-10-15', 'Saqueeb Mohammad Sultan', '13671', 'HO/Operations', 'Trade Operations', 'Ashikur Rahman', 'Waiting', '207', 'Battery', 'Not checked Yet', '2020-10-21', '-', 'Yes', 'Yes'),
+(79, '2020-10-15', 'Saqueeb Mohammad Sultan', '13652', 'HO/Operations', 'Account Services', 'Fakhrul Islam', 'Waiting', 'Waiting', 'Waiting', 'Not checked Yet', '2020-10-15', '-', 'Yes', 'Yes'),
+(80, '2020-10-15', 'Saqueeb Mohammad Sultan', '13651', 'Gulshan/Operations', 'Account Services', 'Sams Shiraj Afif', 'Waiting', 'Waiting', 'Waiting', 'Not checked Yet', '2020-10-15', '-', 'Yes', 'Yes'),
+(81, '2020-10-18', 'Saqueeb Mohammad Sultan', '13382', 'Sabera - 2 units', 'Digital Banking & Payments', 'Moniruzzaman', 'Waiting', 'Waiting', 'Waiting', 'Not checked Yet', '2020-10-18', '-', 'Yes', 'Yes'),
+(82, '2020-06-30', 'Khandaker Naim Hossaion', '0', 'HEAD OFF', 'MD_SIR', 'MD_SIR', 'POWER TREE', '5786', 'Waiting', 'Not checked Yet', '2020-06-30', '-', '', 'Pending'),
+(83, '2020-08-20', 'Saqueeb Mohammad Sultan', '11276', 'Gulshan/CAD', 'CAD', 'Abu Zakaria', 'Waiting', 'Waiting', 'Waiting', 'Not checked Yet', '0000-00-00', '-', '', 'Pending'),
+(84, '2020-09-22', 'Saqueeb Mohammad Sultan', '12713', 'HO/Operations', 'HO/Operations', 'Rashidul Amin', 'Riello', 'C3A0003120', 'Support UPS IDEAl -0947050438', 'Not checked Yet', '2020-09-21', '-', '', 'Pending'),
+(85, '2020-07-06', 'Saqueeb Mohammad Sultan', '10483', 'Gulshan/CAD', 'Gulshan/CAD', 'Javed Bin Wahid', 'Waiting', 'Waiting', 'Waiting', 'Not checked Yet', '0000-00-00', '-', '', 'Yes'),
+(86, '2020-07-06', 'Saqueeb Mohammad Sultan', '10469', 'Gulshan/SAMD', 'Gulshan/SAMD', 'Farida Yesmin', 'Waiting', 'Waiting', 'Waiting', 'Not checked Yet', '0000-00-00', '-', '', 'Yes'),
+(87, '2020-07-09', 'Saqueeb Mohammad Sultan', '10581', 'Gulshan/CAD', 'Gulshan/CAD', 'Mahmuda Fahmi', 'Waiting', 'Waiting', 'Waiting', 'Not checked Yet', '0000-00-00', '-', '', 'Yes'),
+(88, '2020-07-20', 'Saqueeb Mohammad Sultan', '10852', 'RB/Jashimuddin Road', 'RB/Jashimuddin Road', 'Nawadeer Tasneem Ahsan', 'Waiting', '5806', 'Waiting', 'Not checked Yet', '0000-00-00', '-', '', 'Yes'),
+(89, '2020-07-20', 'Saqueeb Mohammad Sultan', '10821', 'Dhanmondi Branch', 'RB/Dhanmondi Branch', 'Kazi Tahamina', 'Waiting', 'Waiting', 'Waiting', 'Not checked Yet', '0000-00-00', '-', '', 'Yes'),
+(90, '2020-08-04', 'Saqueeb Mohammad Sultan', '11289', 'HO/OPS', 'HO/OPS', 'Tanvir Hossain', 'Waiting', '7564', 'Waiting', 'Not checked Yet', '2020-08-09', '-', '', 'Yes'),
+(91, '2020-08-04', 'Saqueeb Mohammad Sultan', '11236', 'Cash Management Operations', 'Operations', 'Uzzal Kumar Mukharjee', 'Waiting', '8101', 'Waiting', 'Not checked Yet', '2020-08-09', '-', '', 'Yes'),
+(92, '2020-08-06', 'Saqueeb Mohammad Sultan', '11100', 'Dhanmondi Branch', 'RB/Dhanmondi Branch', 'Kazi Tahamina', 'Waiting', 'Waiting', 'Waiting', 'Not checked Yet', '0000-00-00', '-', '', 'Yes'),
+(93, '2020-08-19', 'Saqueeb Mohammad Sultan', '11646', 'Retail Risk - 2 units', 'Retail Risk - 2 units', 'Shafin Md. Imran Waiz', 'STAR', '4345', 'BATTERY', 'ONE SUPPORT  ELEIT SN: 1933', '2020-08-25', '-', 'Yes', 'Yes'),
+(94, '2020-02-19', 'Sabit Bin Kabir', '8386', 'Operations', 'Operations', 'Rezwan Al Sabab', 'riello', '6329', 'SUPPORT POWER TREE 650VA SN:56', 'OUT OF ORDER', '2020-02-19', '-', 'Support UPS Provided', 'Not Required'),
+(95, '2020-09-14', 'Saqueeb Mohammad Sultan', '12446', 'Jashimuddin Road', 'RB', 'Farhad Hossain', 'IDEAL', '12764', 'SUPPORT POWER TREE  S/N:170600', 'Out of Order', '2020-09-15', '-', 'Support UPS Provided', 'Not Required'),
+(96, '2020-09-09', 'Saqueeb Mohammad Sultan', '12167', 'Fulbarigate - Stabilizer', 'RB/Fulbarigate - Stabilizer', 'Nahinul Huq', 'Waiting', 'Waiting', 'Out of Order', 'Out of Order', '0000-00-00', '-', '', 'Yes'),
+(97, '2020-09-17', 'Saqueeb Mohammad Sultan', '12156', 'RB/Barishal', 'RB/Barishal', 'Osman Khan', 'ELEIT', '5403', 'Waiting', 'REPAIR DONE IDEAL S/N:1864', '2020-09-08', '-', 'Support UPS Provided', 'Yes'),
+(98, '2020-08-24', 'Saqueeb Mohammad Sultan', '11805.1', 'Cards Sales', 'Cards Sales', 'Jubaer Ahmed', 'ideal', '3981', 'OUT OF ORDER', 'SUPPORT ELEIT 5373', '2020-09-02', '-', 'Support UPS Provided', 'Yes'),
+(99, '2020-08-24', 'Saqueeb Mohammad Sultan', '11805.2', 'Cards Sales', 'Cards Sales', 'Ahmmad Ali', 'Waiting', '133', 'OUT OF ORDER', 'SUPPORT ELEIT 5585', '2020-09-02', '-', 'Support UPS Provided', 'Yes'),
+(100, '2020-09-22', 'Saqueeb Mohammad Sultan', '12740', 'HO/Operations', 'HO/Operations', 'Hasan Ahmed', 'Blazer 600', 'EL4309726541', '', 'SUPPORT FLORA S/N:7645', '2020-09-24', '-', 'Support UPS Provided', 'Yes'),
+(101, '2020-09-01', 'Saqueeb Mohammad Sultan', '12071', 'HO\\TSD', 'HO\\TSD', 'Tanvir Tausif', 'IDEAL', '2447', 'OUT OF ORDER', 'SUPPORT FLORA S/N:7646', '2020-09-13', '-', 'Support UPS Provided', 'Yes'),
+(102, '2020-10-01', 'Saqueeb Mohammad Sultan', '12155', 'Barisal branch', 'Barisal branch', 'Abul Bashar', 'APOLLO', '5', 'Waiting', 'SUPPORT POWER TREE PLUS  S/N:5946', '2020-09-08', '-', 'Yes', 'Yes'),
+(103, '2020-10-07', 'Saqueeb Mohammad Sultan', '13410', 'HO/Operations', 'Operations', 'Senjuti Khan', 'IDEAL', '12745', 'Battery', 'Support Provided BLAZER SN:6541', '2020-10-08', '-', 'Yes', 'Yes'),
+(104, '2020-10-04', 'Saqueeb Mohammad Sultan', '13107', 'Gulshan/Cards', 'Cards', 'S.M. Ettakhar Uddin Rahat', 'Ideal', '2685', 'Battery', 'Support ups Provided BLAZER  S/N:4937', '2020-10-08', '-', 'Yes', 'Yes'),
+(105, '2020-10-04', 'Saqueeb Mohammad Sultan', '13204', 'Bhulta', 'RB', 'Alif Hossain', 'Ideal', '15053', 'Battery', 'Support ups Provided Ideal 14135951737', '2020-10-19', '-', 'Yes', 'Yes'),
+(106, '2020-10-06', 'Saqueeb Mohammad Sultan', '13303', 'Uday Tower', 'Service Delivery', 'Kazi Tamzidul Islam', 'ideal', '60615', 'battery', 'Support UPS Provided, PowerTree Plus , 1706005620', '2020-10-06', '-', 'Yes', 'Yes'),
+(107, '2020-09-23', 'Saqueeb Mohammad Sultan', '12776', 'Principal Branch', 'RB/Principal Branch', 'Riffat Binte Wahid', 'Ideal', '8470503697', 'Waiting', 'Support: Apex; S/N-241207367655', '2020-09-23', '-', 'Support UPS Provided', 'Pending'),
+(109, '2020-10-25', 'Saqueeb', '12584', 'Motijheel', 'IT', 'Naim', '', '', '', '', NULL, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -3102,6 +3240,13 @@ ALTER TABLE `add_asset`
   ADD UNIQUE KEY `Incident` (`Incident`);
 
 --
+-- Indexes for table `inventory_offline_ups`
+--
+ALTER TABLE `inventory_offline_ups`
+  ADD PRIMARY KEY (`Ref_ID`),
+  ADD UNIQUE KEY `Ref_ID` (`Ref_ID`);
+
+--
 -- Indexes for table `inventory_online_ups`
 --
 ALTER TABLE `inventory_online_ups`
@@ -3148,6 +3293,12 @@ ALTER TABLE `warranty_claim`
 --
 ALTER TABLE `add_asset`
   MODIFY `Sl` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `inventory_offline_ups`
+--
+ALTER TABLE `inventory_offline_ups`
+  MODIFY `Ref_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 
 --
 -- AUTO_INCREMENT for table `inventory_online_ups`

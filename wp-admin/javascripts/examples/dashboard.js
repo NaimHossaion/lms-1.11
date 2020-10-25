@@ -15,7 +15,7 @@ $(function () {
     "hideMethod": "fadeOut"
     };
 
-    toastr.info('EBL-IT', '<h5 style="margin-top: 0px; margin-bottom: 5px;"><b>Khandaker Naim Hossaion</b></h5>');
+    toastr.info('Developed by: Khandaker Naim', '<h5 style="margin-top: 0px; margin-bottom: 5px;"><b>Service Desk Portal</b></h5>');
 
     //AREA CHART EXAMPLE
     // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

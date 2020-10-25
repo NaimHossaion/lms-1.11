@@ -112,7 +112,7 @@ if(isset($_POST['add_claim'])){
                                 </div>
                                 <div class="form-group">
                                     <label for="email2" class="col-sm-4 control-label">Vendor Name</label>
-                                    <div class="col-sm-5">
+                                    <div class="col-sm-8">
                                         <select name="Vendor_Name" id="email2" class="form-control" style="width: 100%">
                                             <option value="" disabled selected hidden>Choose Vendor Name</option>
                                             <option value="SMS Systems">SMS Systems</option>
