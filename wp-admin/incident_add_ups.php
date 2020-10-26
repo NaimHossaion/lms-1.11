@@ -11,8 +11,8 @@ if(isset($_POST['add_ups'])){
     $User_Name = $_POST['User_Name'];
 
 
-    $result = mysqli_query($con,"INSERT INTO inventory_offline_ups(Follow_Up, Incident_No, Issue_Date, Branch_Name, Department, User_Name) 
-                VALUES ('$Follow_Up', '$Incident_No', '$Issue_Date', '$Branch_Name', '$Department', '$User_Name')");
+    $result = mysqli_query($con,"INSERT INTO inventory_offline_ups(Follow_Up, Incident_No, Issue_Date, Branch_Name, Department, User_Name, Delivery_Date) 
+                VALUES ('$Follow_Up', '$Incident_No', '$Issue_Date', '$Branch_Name', '$Department', '$User_Name', '')");
     if ($result){
         $success = "Incident No - $Incident_No has been added successfully!";
     }else {
@@ -67,9 +67,18 @@ if(isset($_POST['add_ups'])){
                             <form class="form-horizontal" method="POST" action="<?= $_SERVER['PHP_SELF'] ?>">
                                 <h5 class="mb-lg">Add UPS</h5>
                                 <div class="form-group">
-                                    <label for="password2" class="col-sm-4 control-label">Follow_Up</label>
+                                    <label for="Follow_Up" class="col-sm-4 control-label">Follow_Up</label>
                                     <div class="col-sm-8">
-                                        <input type="text" name="Follow_Up" class="form-control" id="password2" placeholder="Incident">
+
+                                            <select class="form-control" name="Officer_Name">
+                                                <option value="" disabled selected hidden>Follow Up Engineer</option>
+                                                <?php
+                                                $result = mysqli_query($con, "SELECT * FROM officer_list");
+                                                while ($row = mysqli_fetch_assoc($result)){ ?>
+                                                    <option value=""><?= $row['Officer_Name'] ?></option>
+                                                <?php     }
+                                                ?>
+                                            </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -79,9 +88,12 @@ if(isset($_POST['add_ups'])){
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="default-datepicker" class="col-sm-4 control-label ">Issue_Date</label>
+                                    <label class="col-sm-4 control-label ">Issue_Date</label>
                                     <div class="col-sm-5">
-                                        <input type="date" name="Issue_Date" class="form-control" id="default-datepicker" required>
+                                        <div class="input-group">
+                                            <span class="input-group-addon x-primary"><i class="fa fa-calendar"></i></span>
+                                            <input type="date" name="Issue_Date" class="form-control" required>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group">

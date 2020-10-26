@@ -40,7 +40,7 @@
                             while ($row = mysqli_fetch_assoc($result)){
                                 ?>
                                 <tr>
-                                    <td><?= $row['Issue_Date'] ?></td>
+                                    <td><?= date('d-M-Y', strtotime($row['Issue_Date'])) ?></td>
                                     <td><?= $row['Incident_No'] ?></td>
                                     <td><?= $row['Branch_Name'] ?></td>
                                     <td><?= $row['Department'] ?></td>
@@ -48,7 +48,7 @@
                                     <td><?= $row['UPS_Model'] ?></td>
                                     <td><?= $row['Status'] ?></td>
                                     <td><?= $row['Problem_Description'] ?></td>
-                                    <td><?= $row['Delivery_Date'] ?></td>
+                                    <td><?= date('d-M-Y', strtotime($row['Delivery_Date'])) ?></td>
                                     <td><?= $row['Is_Repaired'] ?></td>
                                     <td><?= $row['Mail_Sent'] ?></td>
                                 </tr>
