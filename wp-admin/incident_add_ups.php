@@ -1,6 +1,7 @@
 <?php
 require_once 'header.php';
 require_once 'dbcon.php';
+error_reporting(0);
 
 if(isset($_POST['add_ups'])){
     $Follow_Up = $_POST['Follow_Up'];
@@ -69,7 +70,6 @@ if(isset($_POST['add_ups'])){
                                 <div class="form-group">
                                     <label for="Follow_Up" class="col-sm-4 control-label">Follow_Up</label>
                                     <div class="col-sm-8">
-
                                             <select class="form-control" name="Officer_Name">
                                                 <option value="" disabled selected hidden>Follow Up Engineer</option>
                                                 <?php
