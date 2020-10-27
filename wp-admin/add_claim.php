@@ -111,13 +111,16 @@ if(isset($_POST['add_claim'])){
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="email2" class="col-sm-4 control-label">Vendor Name</label>
+                                    <label for="Vendor_Name" class="col-sm-4 control-label">Vendor_Name</label>
                                     <div class="col-sm-8">
-                                        <select name="Vendor_Name" id="email2" class="form-control" style="width: 100%">
+                                        <select class="form-control" name="Vendor_Name">
                                             <option value="" disabled selected hidden>Choose Vendor Name</option>
-                                            <option value="SMS Systems">SMS Systems</option>
-                                            <option value="Thakral Information Systems">Thakral Information Systems</option>
-                                            <option value="Pakiza Technovation Limited">Pakiza Technovation Limited</option>
+                                            <?php
+                                            $result = mysqli_query($con, "SELECT * FROM vendor_list  WHERE `Status` = '1'");
+                                            while ($row = mysqli_fetch_assoc($result)){ ?>
+                                                <option value=""><?= $row['Vendor_Name'] ?></option>
+                                            <?php     }
+                                            ?>
                                         </select>
                                     </div>
                                 </div>

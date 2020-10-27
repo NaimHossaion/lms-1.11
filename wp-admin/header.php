@@ -140,6 +140,13 @@ $users_info = mysqli_fetch_assoc($data);
                                     <li class="<?= $page == 'incident_ups.php' ? 'active-item':'' ?>"><a href="incident_ups.php"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span>UPS Status</span></a></li>
                                 </ul>
                             </li>
+                            <li class="has-child-item close-item <?= $page == 'vendor_list_page.php' ? 'open-item':'' ?><?= $page == 'vendor_list_add.php' ? 'open-item':'' ?>">
+                                <a><i class="fa fa-exclamation-circle" aria-hidden="true"></i><span>Vendor List</span></a>
+                                <ul class="nav child-nav level-1">
+                                    <li class="<?= $page == 'vendor_list_add.php' ? 'active-item':'' ?>"><a href="vendor_list_add.php"><i class="fa fa-plus" aria-hidden="true"></i><span>Add Vendor</span></a></li>
+                                    <li class="<?= $page == 'vendor_list_page.php' ? 'active-item':'' ?>"><a href="vendor_list_page.php"><i class="fa fa-laptop" aria-hidden="true"></i><span>Vendor List</span></a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </nav>
                 </div>
