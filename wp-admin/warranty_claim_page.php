@@ -24,7 +24,7 @@
                                 <th>Model_Name</th>
                                 <th>Vendor_Name</th>
                                 <th>User_Name</th>
-                                <th>Department</th>
+                                <th>Device_Serial</th>
                                 <th>Mailing_Date</th>
                                 <th>Sending_Date</th>
                                 <th>Return_Date</th>
@@ -41,7 +41,7 @@
                                     <td><?= $row['Model_Name'] ?></td>
                                     <td><?= $row['Vendor_Name'] ?></td>
                                     <td><?= $row['User_Name'] ?></td>
-                                    <td><?= $row['Department'] ?></td>
+                                    <td><?= $row['Device_Serial'] ?></td>
                                     <td><?= $row['Mailing_Date'] ?></td>
                                     <td><?= $row['Sending_Date'] ?></td>
                                     <td><?= $row['Return_Date'] ?></td>
