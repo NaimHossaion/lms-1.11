@@ -75,7 +75,7 @@ if(isset($_POST['add_ups'])){
                                                 <?php
                                                 $result = mysqli_query($con, "SELECT * FROM officer_list");
                                                 while ($row = mysqli_fetch_assoc($result)){ ?>
-                                                    <option value=""><?= $row['Officer_Name'] ?></option>
+                                                    <option value="<?= $row['Officer_Name'] ?>"><?= $row['Officer_Name'] ?></option>
                                                 <?php     }
                                                 ?>
                                             </select>

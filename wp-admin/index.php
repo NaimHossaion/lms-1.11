@@ -32,7 +32,7 @@
                                 </div>
                             </div>
                             <?php
-                            $claims = mysqli_query($con, "SELECT * FROM `warranty_claim` WHERE Status = '1'");
+                            $claims = mysqli_query($con, "SELECT * FROM `warranty_claim` WHERE Status = '0'");
                             $total_claims = mysqli_num_rows($claims);
                             ?>
                             <!--BOX Style 1-->
@@ -40,8 +40,8 @@
                                 <div class="panel widgetbox wbox-1 bg-darker-2 color-light">
                                     <a href="warranty_claim_page.php">
                                         <div class="panel-content">
-                                            <h1 class="title color-light-1"> <i class="fa fa-envelope"></i> <?= $total_claims; ?> </h1>
-                                            <h4 class="subtitle">Warranty Claim</h4>
+                                            <h1 class="title color-light-1"> <i class="fa fa-exclamation-triangle"></i> <?= $total_claims; ?> </h1>
+                                            <h4 class="subtitle">Warranty Claim Pending</h4>
                                         </div>
                                     </a>
                                 </div>
