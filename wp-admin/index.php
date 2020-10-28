@@ -13,35 +13,20 @@
                 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
                 <div class="row animated fadeInUp">
                     <!--WIDGET BOX STYLE, Row 1-->
-                    <h4 class="section-subtitle"><b>Inventory</b> Desktop, Laptop and Online UPS</h4>
+                    <h4 class="section-subtitle"><b>Status:</b> Workstation & Online UPS</h4>
                     <div class="col-sm-12">
                         <div class="row">
-                            <?php
-                            $users = mysqli_query($con, "SELECT * FROM `users`");
-                            $total_users = mysqli_num_rows($users);
-                            ?>
-                            <!--BOX Style 1-->
-                            <div class="col-sm-6 col-md-4 col-lg-3">
-                                <div class="panel widgetbox wbox-1 bg-darker-1">
-                                    <a href="all_users.php">
-                                        <div class="panel-content">
-                                            <h1 class="title color-w"><i class="fa fa-globe"></i> <?= $total_users; ?> </h1>
-                                            <h4 class="subtitle color-lighter-1">Total Users</h4>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
                             <?php
                             $claims = mysqli_query($con, "SELECT * FROM `warranty_claim` WHERE Status = '0'");
                             $total_claims = mysqli_num_rows($claims);
                             ?>
                             <!--BOX Style 1-->
                             <div class="col-sm-6 col-md-4 col-lg-3">
-                                <div class="panel widgetbox wbox-1 bg-darker-2 color-light">
+                                <div class="panel widgetbox wbox-1 bg-lighter-2 color-light">
                                     <a href="warranty_claim_page.php">
                                         <div class="panel-content">
-                                            <h1 class="title color-light-1"> <i class="fa fa-exclamation-triangle"></i> <?= $total_claims; ?> </h1>
-                                            <h4 class="subtitle">Warranty Claim Pending</h4>
+                                            <h1 class="title color-darker-2"> <i class="fa fa-exclamation-triangle"></i> <?= $total_claims; ?> </h1>
+                                            <h4 class="subtitle color-darker-1">Warranty Claim </h4>
                                         </div>
                                     </a>
                                 </div>
@@ -58,6 +43,21 @@
                                         <div class="panel-content">
                                             <h1 class="title color-darker-2"> <i class="fa fa-desktop"></i> <?= $total_users; ?>  </h1>
                                             <h4 class="subtitle color-darker-1">Total Workstations</h4>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <?php
+                            $users = mysqli_query($con, "SELECT * FROM `users`");
+                            $total_users = mysqli_num_rows($users);
+                            ?>
+                            <!--BOX Style 1-->
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <div class="panel widgetbox wbox-1 bg-light color-darker-2">
+                                    <a href="all_users.php">
+                                        <div class="panel-content">
+                                            <h1 class="title"><i class="fa fa-globe"></i> <?= $total_users; ?> </h1>
+                                            <h4 class="subtitle">Total Users</h4>
                                         </div>
                                     </a>
                                 </div>

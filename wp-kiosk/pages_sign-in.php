@@ -14,8 +14,12 @@ if (isset($_POST['login'])){
     if(mysqli_num_rows($result) == 1){
         $row = mysqli_fetch_assoc($result);
         if(password_verify($password, $row['password'])){
-            $_SESSION['user_login'] = $email;
-            header('location: index.php');
+            if($row['status'] == 1){
+                $_SESSION['user_login'] = $email;
+                header('location: index.php');
+            }else {
+                $error = "Your Status is inactive!";
+            }
         }else {
             $error = "Password invalid!";
         }
