@@ -7,43 +7,49 @@
         <div class="leftside-content-header">
             <ul class="breadcrumbs">
                 <li><i class="fa fa-home" aria-hidden="true"></i><a href="index.php">Dashboard</a></li>
-                <li><a href="javascript:avoid(0)">Warranty Status</a></li>
+                <li><a href="javascript:avoid(0)">3KVA UPS Repair</a></li>
             </ul>
         </div>
     </div>
     <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
     <div class="row animated fadeInUp">
         <div class="col-sm-12">
-            <h4 class="section-subtitle"><b>Warranty Claim Status</b></h4>
+            <h4 class="section-subtitle"><b>3KVA UPS Repair</b></h4>
             <div class="panel">
                 <div class="panel-content">
                     <div class="table-responsive">
                         <table id="basic-table" class="data-table table table-striped nowrap table-hover" cellspacing="0" width="100%">
                             <thead>
-                            <tr>
-                                <th>Model Name</th>
-                                <th>Vendor Name</th>
-                                <th>User Name</th>
-                                <th>Device Serial</th>
-                                <th>Sending Date</th>
-                                <th>Return Date</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
+                                <tr>
+                                    <th>Incident</th>
+                                    <th>Location</th>
+                                    <th>UPS_Model</th>
+                                    <th>UPS_Brand</th>
+                                    <th>UPS_Capacity</th>
+                                    <th>UPS_Serial</th>
+                                    <th>Sending_Date</th>
+                                    <th>Return_Date</th>
+                                    <th>Repair_Status</th>
+                                    <th>Remarks</th>
+                                    <th>Action</th>
+                                </tr>
                             </thead>
                             <tbody>
                             <?php
-                            $result = mysqli_query($con, "SELECT * FROM warranty_claim");
+                            $result = mysqli_query($con, "SELECT * FROM 3kva_ups_repair");
                             while ($row = mysqli_fetch_assoc($result)){
                                 ?>
                                 <tr>
-                                    <td><?= $row['Model_Name'] ?></td>
-                                    <td><?= $row['Vendor_Name'] ?></td>
-                                    <td><?= $row['User_Name'] ?></td>
-                                    <td><?= $row['Device_Serial'] ?></td>
+                                    <td><?= $row['Incident'] ?></td>
+                                    <td><?= $row['Location'] ?></td>
+                                    <td><?= $row['UPS_Model'] ?></td>
+                                    <td><?= $row['UPS_Brand'] ?></td>
+                                    <td><?= $row['UPS_Capacity'] ?></td>
+                                    <td><?= $row['UPS_Serial'] ?></td>
                                     <td><?= $row['Sending_Date'] ?></td>
                                     <td><?= $row['Return_Date'] ?></td>
-                                    <td><?= $row['Status'] == 1 ? '<span class="badge badge-xs x-success">Resolved</span>' : '<span class="badge badge-xs x-warning">Pending</span>' ?></td>
+                                    <td><?= $row['Repair_Status'] ?></td>
+                                    <td><?= $row['Remarks'] ?></td>
                                     <td>
                                         <a href="" data-toggle="modal" data-target="#Ref_ID-<?= $row['Ref_ID'] ?>"<i class="fa fa-eye"> View </i></a>
                                         <a href="" data-toggle="modal" data-target="#Incident_Update-<?= $row['Ref_ID'] ?>"<i class="fa fa-pencil-square-o"> Edit </i></a>
@@ -62,7 +68,7 @@
     </div>
 
 <?php
-$result = mysqli_query($con, "SELECT * FROM warranty_claim");
+$result = mysqli_query($con, "SELECT * FROM 3kva_ups_repair");
 while ($row = mysqli_fetch_assoc($result)){
     ?>
     <!-- Modal -->

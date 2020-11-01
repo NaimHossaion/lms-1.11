@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 26, 2020 at 06:53 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+-- Generation Time: Nov 01, 2020 at 03:58 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,34 @@ SET time_zone = "+00:00";
 --
 -- Database: `ims`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `3kva_ups_repair`
+--
+
+CREATE TABLE `3kva_ups_repair` (
+  `Ref_ID` int(12) NOT NULL,
+  `Incident` varchar(30) NOT NULL,
+  `Location` varchar(50) NOT NULL,
+  `UPS_Model` varchar(50) NOT NULL,
+  `UPS_Brand` varchar(50) NOT NULL,
+  `UPS_Capacity` varchar(50) NOT NULL,
+  `UPS_Serial` varchar(50) NOT NULL,
+  `Sending_Date` date DEFAULT NULL,
+  `Return_Date` date DEFAULT NULL,
+  `Repair_Status` varchar(50) NOT NULL,
+  `Remarks` varchar(50) NOT NULL,
+  `Date_Time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `3kva_ups_repair`
+--
+
+INSERT INTO `3kva_ups_repair` (`Ref_ID`, `Incident`, `Location`, `UPS_Model`, `UPS_Brand`, `UPS_Capacity`, `UPS_Serial`, `Sending_Date`, `Return_Date`, `Repair_Status`, `Remarks`, `Date_Time`) VALUES
+(1, '13864', 'Khilgaon Branch', '2300HS-L', 'APOLLO', '3kVA Long', '3EAL150611278550236', '2020-10-28', NULL, '', '', '2020-11-01 14:57:18');
 
 -- --------------------------------------------------------
 
@@ -212,7 +240,21 @@ INSERT INTO `inventory_offline_ups` (`Ref_ID`, `Issue_Date`, `Follow_Up`, `Incid
 (113, '2020-10-13', '', '123456', 'Khandaker Hossaion', 'IT', 'Naim 11', '', '', '', '', '0000-00-00', '', '', ''),
 (114, '2020-10-13', '', '123456', 'Khandaker Hossaion', 'IT', 'Naim 11', '', '', '', '', '0000-00-00', '', '', ''),
 (115, '2020-10-28', '', '123456', 'Banani', 'IT', 'Naim', '', '', '', '', '0000-00-00', '', '', ''),
-(116, '2020-11-07', '', '123456', 'Khandaker Hossaion', 'IT', 'Naim 1135', '', '', '', '', '0000-00-00', '', '', '');
+(116, '2020-11-07', '', '123456', 'Khandaker Hossaion', 'IT', 'Naim 1135', '', '', '', '', '0000-00-00', '', '', ''),
+(117, '2020-11-07', '', '12345615', 'Khandaker Hossaion', 'IT', 'Naim 12345615', '', '', '', '', '0000-00-00', '', '', ''),
+(118, '2020-11-07', '', '12345615', 'Khandaker Hossaion', 'IT', 'Naim 12345615', '', '', '', '', '0000-00-00', '', '', ''),
+(119, '2020-10-29', '', '123456', 'Khandaker Hossaion', 'IT', 'Naim', '', '', '', '', '0000-00-00', '', '', ''),
+(120, '2020-10-29', '', '123456', 'Khandaker Hossaion', 'IT', 'Naim', '', '', '', '', '0000-00-00', '', '', ''),
+(121, '2020-10-14', '', '123456', 'Khandaker Hossaion', 'IT', 'Naim', '', '', '', '', '0000-00-00', '', '', ''),
+(122, '2020-10-22', '', '123456', 'Khandaker Hossaion', 'IT', 'Naim', '', '', '', '', '0000-00-00', '', '', ''),
+(123, '2020-10-22', '', '123456', 'Khandaker Hossaion', 'IT', 'Naim', '', '', '', '', '0000-00-00', '', '', ''),
+(124, '2020-10-22', '', '123456', 'Khandaker Hossaion', 'IT', 'Naim', '', '', '', '', '0000-00-00', '', '', ''),
+(125, '2020-10-01', '', '123456', 'Khandaker Hossaion', 'IT', 'Naim', '', '', '', '', '0000-00-00', '', '', ''),
+(126, '2020-10-01', '', '123456', 'Khandaker Hossaion', 'IT', 'Naim', '', '', '', '', '0000-00-00', '', '', ''),
+(127, '2020-10-01', '', '123456', 'Khandaker Hossaion', 'IT', 'Naim', '', '', '', '', '0000-00-00', '', '', ''),
+(128, '2020-10-01', '', '123456', 'Khandaker Hossaion', 'IT', 'Naim', '', '', '', '', '0000-00-00', '', '', ''),
+(129, '2020-10-01', '', '123456', 'Khandaker Hossaion', 'IT', 'Naim', '', '', '', '', '0000-00-00', '', '', ''),
+(130, '2020-11-07', '', '123456', 'Khandaker Hossaion', 'IT', 'Naim 1135', '', '', '', '', '0000-00-00', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -3728,11 +3770,39 @@ INSERT INTO `users` (`id`, `name`, `email`, `username`, `password`, `image`, `st
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `vendor_list`
+--
+
+CREATE TABLE `vendor_list` (
+  `Ref_ID` int(12) NOT NULL,
+  `Vendor_Name` varchar(50) NOT NULL,
+  `Contact_Person` varchar(50) NOT NULL,
+  `Email_ID` varchar(50) NOT NULL,
+  `Mobile_No` varchar(50) NOT NULL,
+  `Status` tinyint(1) NOT NULL,
+  `Date_Time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `vendor_list`
+--
+
+INSERT INTO `vendor_list` (`Ref_ID`, `Vendor_Name`, `Contact_Person`, `Email_ID`, `Mobile_No`, `Status`, `Date_Time`) VALUES
+(1, 'SMS Systems', 'Mr. Rashed', 'sms.systems@yahoo.com', '1726', 0, '2020-10-27 17:16:23'),
+(2, 'SMS System', 'Mr. Rashed', 'naimcm@gmail.com', '2147483647', 0, '2020-10-27 17:16:23'),
+(3, 'SMS System', 'Rashed', 'naimcm@gmail.com', '+8801671900150', 0, '2020-10-27 17:16:23'),
+(4, 'Pakiza Technovation Limited', 'Mizan', '', '', 1, '2020-10-27 17:14:47'),
+(5, 'Thakral Information Systems', 'Mizan', '', '', 1, '2020-10-27 17:15:00'),
+(6, 'SMS Systems', 'Rashed', '', '', 1, '2020-10-27 17:15:35');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `warranty_claim`
 --
 
 CREATE TABLE `warranty_claim` (
-  `SL` int(10) NOT NULL,
+  `Ref_ID` int(10) NOT NULL,
   `Incident` int(10) DEFAULT NULL,
   `Model_Name` varchar(30) NOT NULL,
   `Device_Serial` varchar(30) NOT NULL,
@@ -3751,16 +3821,25 @@ CREATE TABLE `warranty_claim` (
 -- Dumping data for table `warranty_claim`
 --
 
-INSERT INTO `warranty_claim` (`SL`, `Incident`, `Model_Name`, `Device_Serial`, `Asset_Tag`, `User_Name`, `Department`, `Mailing_Date`, `Sending_Date`, `Return_Date`, `Status`, `Vendor_Name`, `Remarks`) VALUES
-(1, NULL, 'HP Notebook 14-ck1002tu', '5CG9013YCL', 'AGENT-LAP-007', 'Abdul Khalak', 'Agent Banking, Laxmipur', '2020-10-18', NULL, NULL, 0, 'Thakral Information Systems', 'Noise after Starts'),
-(2, NULL, 'Lenovo ThinkPad L470', 'PF10ZGGA', 'DHK-HO-NB652', 'Firoj Shah', 'Mehedibag Priority', '2020-10-18', '2020-10-19', NULL, 0, 'SMS Systems', 'Power key Problem'),
-(3, NULL, 'Dell Optiplex 3060', '9LY8HY2', 'DHK-HO-WS2494', 'EBL IT', 'EBLIT', '2020-10-11', NULL, NULL, 0, 'SMS Systems', 'Display Problem'),
-(4, NULL, 'Lenovo ThinkPad L470', 'PF10XRR3', 'DHK-HO-NB679', 'Nahar Kanta', 'RB', '2020-10-19', '2020-10-19', NULL, 0, 'Thakral Information Systems', 'Keyboard Problem'),
-(5, 0, 'Dell 3400', '1ZZ3JW2', 'DHK-HO-NB921', '', '', '2020-10-20', NULL, NULL, 0, 'Pakiza', 'Restarts frequently');
+INSERT INTO `warranty_claim` (`Ref_ID`, `Incident`, `Model_Name`, `Device_Serial`, `Asset_Tag`, `User_Name`, `Department`, `Mailing_Date`, `Sending_Date`, `Return_Date`, `Status`, `Vendor_Name`, `Remarks`) VALUES
+(1, NULL, 'HP 14-ck1002tu', '5CG9013YCL', 'AGENT-LAP-007', 'Abdul Khalak', 'Agent Banking, Laxmipur', '2020-10-18', '2020-10-18', NULL, 0, 'SMS Systems', 'Noise after Starts'),
+(2, NULL, 'Lenovo ThinkPad L470', 'PF10ZGGA', 'DHK-HO-NB652', 'Firoj Shah', 'Mehedibag Priority', '2020-10-18', '2020-10-19', NULL, 0, 'Thakral Information Systems', 'Power key Problem, Physical Damage'),
+(3, NULL, 'Dell Optiplex 3060', '9LY8HY2', 'DHK-HO-WS2494', 'EBL IT', 'EBLIT', '2020-10-11', '2020-10-11', NULL, 0, 'SMS Systems', 'Display Problem'),
+(4, NULL, 'Lenovo ThinkPad L470', 'PF10XRR3', 'DHK-HO-NB679', 'Lailun Nahar Kanta', 'RB', '2020-10-19', '2020-10-19', NULL, 0, 'Thakral Information Systems', 'Keyboard Problem'),
+(5, NULL, ' Dell Latitude 3400', '1ZZ3JW2', 'DHK-HO-NB921', 'No User', '-', '2020-10-20', '2020-10-20', '2020-10-27', 1, ' Pakiza Technovation Limited', 'Restarts frequently, HDD Problem'),
+(6, NULL, 'Lenovo ThinkPad L470', 'PF13Y4QU', 'DHK-HO-NB703', 'Umme Fatima Sabrina', 'CRM, HO', '2020-10-06', '2020-10-06', '2020-10-13', 1, 'Thakral Information Systems', 'Keyboard and Power Problem'),
+(8, 12964, 'HP 14-ck1002tu', '5CG91944L0', 'DHK-HO-NB906', 'Nazmul Haque', 'Agent Banking, RB', '2020-09-30', '2020-09-30', NULL, 0, 'SMS Systems ', 'Vertical line/spot in monitor screen');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `3kva_ups_repair`
+--
+ALTER TABLE `3kva_ups_repair`
+  ADD PRIMARY KEY (`Ref_ID`),
+  ADD UNIQUE KEY `Ref_ID` (`Ref_ID`);
 
 --
 -- Indexes for table `add_asset`
@@ -3816,14 +3895,26 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `username` (`username`);
 
 --
+-- Indexes for table `vendor_list`
+--
+ALTER TABLE `vendor_list`
+  ADD PRIMARY KEY (`Ref_ID`);
+
+--
 -- Indexes for table `warranty_claim`
 --
 ALTER TABLE `warranty_claim`
-  ADD UNIQUE KEY `SL` (`SL`);
+  ADD UNIQUE KEY `SL` (`Ref_ID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `3kva_ups_repair`
+--
+ALTER TABLE `3kva_ups_repair`
+  MODIFY `Ref_ID` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `add_asset`
@@ -3835,7 +3926,7 @@ ALTER TABLE `add_asset`
 -- AUTO_INCREMENT for table `inventory_offline_ups`
 --
 ALTER TABLE `inventory_offline_ups`
-  MODIFY `Ref_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+  MODIFY `Ref_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
 
 --
 -- AUTO_INCREMENT for table `inventory_online_ups`
@@ -3862,10 +3953,16 @@ ALTER TABLE `users`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `vendor_list`
+--
+ALTER TABLE `vendor_list`
+  MODIFY `Ref_ID` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `warranty_claim`
 --
 ALTER TABLE `warranty_claim`
-  MODIFY `SL` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Ref_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -17,7 +17,7 @@
                     <div class="col-sm-12">
                         <div class="row">
                             <?php
-                            $claims = mysqli_query($con, "SELECT * FROM `warranty_claim` WHERE Status = '0'");
+                            $claims = mysqli_query($con, "SELECT * FROM `warranty_claim` WHERE `Return_Date` IS NULL");
                             $total_claims = mysqli_num_rows($claims);
                             ?>
                             <!--BOX Style 1-->
