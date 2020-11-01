@@ -67,7 +67,7 @@ if(isset($_POST['add_claim'])){
                     <div class="row">
                         <div class="col-md-12">
                             <form class="form-horizontal" method="POST" action="<?= $_SERVER['PHP_SELF'] ?>">
-                                <h5 class="mb-lg">Add 3KVA UPS to Repair</h5>
+                                <h5 class="mb-lg">Add UPS (3KVA)</h5>
                                 <div class="form-group">
                                     <label for="password2" class="col-sm-4 control-label">Incident</label>
                                     <div class="col-sm-8">

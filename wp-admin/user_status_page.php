@@ -37,8 +37,20 @@
                                     <td><?= $row['name'] ?></td>
                                     <td><?= $row['email'] ?></td>
                                     <td><?= $row['username'] ?></td>
-                                    <td><?= $row['status'] ?></td>
-                                    <td></td>
+                                    <td><?= $row['status'] == 1 ? 'Active' : 'Inactive' ?></td>
+                                    <td>
+                                        <?php
+                                        if ($row['status'] == 1){
+                                            ?>
+                                            <a href="user_status_inactive.php?id<?= base64_encode($row['id']) ?>" class="btn-primary btn-xs"><i class="fa fa-arrow-down"></i></a>
+                                            <?php
+                                        }else {
+                                         ?>
+                                            <a href="user_status_active.php?id<?= base64_encode($row['id']) ?>" class="btn-warning btn-xs"><i class="fa fa-arrow-up"></i></a>
+                                        <?php
+                                        }
+                                            ?>
+                                    </td>
                                 </tr>
                                 <?php
                             }
