@@ -138,7 +138,7 @@ while ($row = mysqli_fetch_assoc($result)){
     $Ref_ID = $row['Ref_ID'];
     $Incident_Details = mysqli_query($con, "SELECT * FROM warranty_claim WHERE Ref_ID ='$Ref_ID'");
     $Incident_Details_Row = mysqli_fetch_assoc($Incident_Details);
-    ?>
+?>
     <!-- Modal -->
     <div class="modal fade" id="Incident_Update-<?= $row['Ref_ID'] ?>" tabindex="-1" role="dialog" aria-labelledby="modal-info-label">
         <div class="modal-dialog" role="document">

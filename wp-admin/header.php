@@ -85,6 +85,15 @@ $users_info = mysqli_fetch_assoc($data);
                         <span class="user-name"><?= $users_info['name'] ?></span>
                         <span class="user-profile">Admin</span>
                     </div>
+                    <i class="fa fa-plus icon-open" aria-hidden="true"></i>
+                    <i class="fa fa-minus icon-close" aria-hidden="true"></i>
+                </div>
+                <div class="user-options dropdown-box">
+                    <div class="drop-content basic">
+                        <ul>
+                            <li> <a href="pages_user-profile.html"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="header-separator"></div>
