@@ -14,7 +14,7 @@
     <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
     <div class="row animated fadeInUp">
         <div class="col-sm-12">
-            <h4 class="section-subtitle"><b>UPS Status, Offline</b></h4>
+            <h4 class="section-subtitle"><b>UPS Repair </b>Status <a href="650va_ups_repair_add.php"><span class="badge x-o x-primary"><i class="fa fa-plus"></i> Add New</span></a></h4>
             <div class="panel">
                 <div class="panel-content">
                     <div class="table-responsive">

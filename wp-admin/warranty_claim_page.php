@@ -14,7 +14,7 @@
     <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
     <div class="row animated fadeInUp">
         <div class="col-sm-12">
-            <h4 class="section-subtitle"><b>Warranty Claim Status</b></h4>
+            <h4 class="section-subtitle"><b>Warranty Claim </b>Status <a href="add_claim.php"><span class="badge x-o x-primary"><i class="fa fa-plus"></i> Add New</span></a></h4>
             <div class="panel">
                 <div class="panel-content">
                     <div class="table-responsive">

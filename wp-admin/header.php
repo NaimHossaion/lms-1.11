@@ -131,29 +131,25 @@ $users_info = mysqli_fetch_assoc($data);
                                     <li class="<?= $page == 'all-incidents.php' ? 'active-item':'' ?>"><a href="all-incidents.php"><i class="fa fa-server" aria-hidden="true"></i><span>All Incidents</span></a></li>
                                 </ul>
                             </li>
-                            <li class="has-child-item close-item <?= $page == 'add_claim.php' ? 'open-item':'' ?><?= $page == 'warranty_claim_page.php' ? 'open-item':'' ?>">
-                                <a><i class="fa fa-exclamation-circle" aria-hidden="true"></i><span>Warranty Claim</span></a>
-                                <ul class="nav child-nav level-1">
-                                    <li class="<?= $page == 'add_claim.php' ? 'active-item':'' ?>"><a href="add_claim.php"><i class="fa fa-plus" aria-hidden="true"></i><span>Add Claim</span></a></li>
-                                    <li class="<?= $page == 'warranty_claim_page.php' ? 'active-item':'' ?>"><a href="warranty_claim_page.php"><i class="fa fa-laptop" aria-hidden="true"></i><span>Warranty Status</span></a></li>
-                                </ul>
-                            </li>
+                            <li class="<?= $page == 'warranty_claim_page.php' ? 'active-item':'' ?>"><a href="warranty_claim_page.php"><i class="fa fa-laptop" aria-hidden="true"></i><span>Warranty Claim</span></a></li>
+                            <li class="<?= $page == '3kva_ups_repair.php' ? 'active-item':'' ?>"><a href="3kva_ups_repair.php"><i class="fa fa-power-off" aria-hidden="true"></i><span>3KVA UPS Repair</span></a></li>
+                            <li class="<?= $page == '650va_ups_repair.php' ? 'active-item':'' ?>"><a href="650va_ups_repair.php"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span>650VA UPS Repair</span></a></li>
                             <li class="<?= $page == 'officer_page.php' ? 'active-item':'' ?>"><a href="officer_page.php"><i class="fa fa-user" aria-hidden="true"></i><span>Officer List</span></a></li>
-                            <li class="<?= $page == 'inventory_page.php' ? 'active-item':'' ?>"><a href="inventory_page.php"><i class="fa fa-desktop" aria-hidden="true"></i><span>Inventory PC</span></a></li>
-                            <li class="<?= $page == 'online_ups_page.php' ? 'active-item':'' ?>"><a href="online_ups_page.php"><i class="fa fa-plug" aria-hidden="true"></i><span>3KVA Online UPS</span></a></li>
                             <li class="<?= $page == 'user_status_page.php' ? 'active-item':'' ?>"><a href="user_status_page.php"><i class="fa fa-group" aria-hidden="true"></i><span>User Status</span></a></li>
-                            <li class="has-child-item close-item <?= $page == 'incident_add_ups.php' ? 'open-item':'' ?><?= $page == 'incident_ups.php' ? 'open-item':'' ?>">
-                                <a><i class="fa fa-power-off" aria-hidden="true"></i><span>650VA UPS</span></a>
-                                <ul class="nav child-nav level-1">
-                                    <li class="<?= $page == 'incident_add_ups.php' ? 'active-item':'' ?>"><a href="incident_add_ups.php"><i class="fa fa-plus" aria-hidden="true"></i><span>Add UPS</span></a></li>
-                                    <li class="<?= $page == 'incident_ups.php' ? 'active-item':'' ?>"><a href="incident_ups.php"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span>UPS Status</span></a></li>
-                                </ul>
-                            </li>
+
                             <li class="has-child-item close-item <?= $page == 'vendor_list_page.php' ? 'open-item':'' ?><?= $page == 'vendor_list_add.php' ? 'open-item':'' ?>">
                                 <a><i class="fa fa-exclamation-circle" aria-hidden="true"></i><span>Vendor List</span></a>
                                 <ul class="nav child-nav level-1">
                                     <li class="<?= $page == 'vendor_list_add.php' ? 'active-item':'' ?>"><a href="vendor_list_add.php"><i class="fa fa-plus" aria-hidden="true"></i><span>Add Vendor</span></a></li>
                                     <li class="<?= $page == 'vendor_list_page.php' ? 'active-item':'' ?>"><a href="vendor_list_page.php"><i class="fa fa-laptop" aria-hidden="true"></i><span>Vendor List</span></a></li>
+                                </ul>
+                            </li>
+                            <li class="has-child-item close-item <?= $page == 'inventory_laptop_branch.php' ? 'open-item':'' ?><?= $page == 'inventory_page.php' ? 'open-item':'' ?><?= $page == 'online_ups_page.php' ? 'open-item':'' ?>">
+                                <a><i class="fa fa-deviantart" aria-hidden="true"></i><span>Inventory</span></a>
+                                <ul class="nav child-nav level-1">
+                                    <li class="<?= $page == 'inventory_laptop_branch.php' ? 'active-item':'' ?>"><a href="inventory_laptop_branch.php"><i class="fa fa-laptop" aria-hidden="true"></i><span>Laptop Branch</span></a></li>
+                                    <li class="<?= $page == 'inventory_page.php' ? 'active-item':'' ?>"><a href="inventory_page.php"><i class="fa fa-desktop" aria-hidden="true"></i><span>CPU PANEBL</span></a></li>
+                                    <li class="<?= $page == 'online_ups_page.php' ? 'active-item':'' ?>"><a href="online_ups_page.php"><i class="fa fa-plug" aria-hidden="true"></i><span>3KVA Online UPS</span></a></li>
                                 </ul>
                             </li>
                         </ul>

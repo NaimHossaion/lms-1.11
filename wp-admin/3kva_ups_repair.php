@@ -14,7 +14,8 @@
     <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
     <div class="row animated fadeInUp">
         <div class="col-sm-12">
-            <h4 class="section-subtitle"><b>3KVA UPS Repair</b></h4>
+            <h4 class="section-subtitle"><b>3KVA UPS Repair </b><a href="3kva_ups_repair_add.php"><span class="badge x-o x-primary"><i class="fa fa-plus"></i> Add New</span></a></h4>
+
             <div class="panel">
                 <div class="panel-content">
                     <div class="table-responsive">
@@ -71,53 +72,29 @@ while ($row = mysqli_fetch_assoc($result)){
             <div class="modal-content">
                 <div class="modal-header state modal-info">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="modal-info-label"><i class="fa fa-info-circle"></i>Item Details</h4>
+                    <h4 class="modal-title" id="modal-info-label"><i class="fa fa-info-circle"></i>Device Details</h4>
                 </div>
                 <div class="modal-body">
                     <table class="table table-bordered">
                         <tr>
-                            <th>Model_Name</th>
-                            <td><?= $row['Model_Name'] ?></td>
+                            <th>Location</th>
+                            <td><?= $row['Location'] ?></td>
                         </tr>
                         <tr>
-                            <th>Device_Serial</th>
-                            <td><?= $row['Device_Serial'] ?></td>
+                            <th>UPS_Brand</th>
+                            <td><?= $row['UPS_Brand'] ?></td>
                         </tr>
                         <tr>
-                            <th>Asset_Tag</th>
-                            <td><?= $row['Asset_Tag'] ?></td>
+                            <th>UPS_Capacity</th>
+                            <td><?= $row['UPS_Capacity'] ?></td>
                         </tr>
                         <tr>
-                            <th>User_Name</th>
-                            <td><?= $row['User_Name'] ?></td>
-                        </tr>
-                        <tr>
-                            <th>Department</th>
-                            <td><?= $row['Department'] ?></td>
-                        </tr>
-                        <tr>
-                            <th>Mailing_Date</th>
-                            <td><?= $row['Mailing_Date'] ?></td>
-                        </tr>
-                        <tr>
-                            <th>Sending_Date</th>
-                            <td><?= $row['Sending_Date'] ?></td>
-                        </tr>
-                        <tr>
-                            <th>Return_Date</th>
-                            <td><?= $row['Return_Date'] ?></td>
-                        </tr>
-                        <tr>
-                            <th>Vendor_Name</th>
-                            <td><?= $row['Vendor_Name'] ?></td>
+                            <th>UPS_Serial</th>
+                            <td><?= $row['UPS_Serial'] ?></td>
                         </tr>
                         <tr>
                             <th>Status</th>
-                            <td><?= $row['Status'] == 1 ? '<span class="badge badge-xs x-success">Resolved</span>' : '<span class="badge badge-xs x-warning">Pending</span>' ?></td>
-                        </tr>
-                        <tr>
-                            <th>Remarks</th>
-                            <td><?= $row['Remarks'] ?></td>
+                            <td><?= $row['Repair_Status'] == 'Resolved' ? '<span class="badge badge-xs x-success">Resolved</span>' : '<span class="badge badge-xs x-warning">Pending</span>' ?></td>
                         </tr>
                     </table>
                 </div>
@@ -154,24 +131,15 @@ while ($row = mysqli_fetch_assoc($result)){
                                 <div class="col-md-12">
                                     <form class="form-horizontal" method="post" action="">
                                         <div class="form-group">
-                                            <label for="default-datepicker" class="col-sm-4 control-label ">Date</label>
-                                            <div class="col-sm-5">
-                                                <div class="input-group">
-                                                    <span class="input-group-addon x-primary"><i class="fa fa-calendar"></i></span>
-                                                    <input type="date" name="Date" class="form-control" id="default-datepicker" value="<?= $Incident_Details_Row['Date'] ?>" required>
-                                                </div>
+                                            <label for="Location" class="col-sm-4 control-label">Location</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="Location" class="form-control" id="Location" placeholder="Location" value="<?= $Incident_Details_Row['Location'] ?>" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="email2" class="col-sm-4 control-label">Incident No</label>
+                                            <label for="Vendor_Name" class="col-sm-4 control-label">Vendor_Name</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="Incident" class="form-control" id="email2" placeholder="Incident Number" value="<?= $Incident_Details_Row['Incident'] ?>" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="Model_Name" class="col-sm-4 control-label">Model_Name</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" name="Model_Name" class="form-control" id="Model_Name" placeholder="Model_Name" value="<?= $Incident_Details_Row['Model_Name'] ?>" required>
+                                                <input type="text" name="Vendor_Name" class="form-control" id="Vendor_Name" placeholder="Vendor_Name" value="<?= $Incident_Details_Row['Vendor_Name'] ?>" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -190,6 +158,17 @@ while ($row = mysqli_fetch_assoc($result)){
     </div>
     <?php
 }
+
+if(isset($_POST['Incident_Update'])){
+    $Location = $_POST['Location'];
+    $Vendor_Name = $_POST['Vendor_Name'];
+
+    $result = mysqli_query($con,"UPDATE `3kva_ups_repair` SET `Location`='$Location', `Vendor_Name`='$Vendor_Name' WHERE `Ref_ID` = '$Ref_ID'");
+    if ($result){
+        header('location: 3kva_ups_repair.php');
+    }
+}
+
 ?>
 
 <?php require_once 'footer.php'; ?>
