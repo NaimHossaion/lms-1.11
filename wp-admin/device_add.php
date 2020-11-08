@@ -25,7 +25,7 @@ if(isset($_POST['add_device'])){
         <div class="leftside-content-header">
             <ul class="breadcrumbs">
                 <li><i class="fa fa-home" aria-hidden="true"></i><a href="index.php">Dashboard</a></li>
-                <li><a href="device_model_list.php">Device List</a></li>
+                <li><a href="device_list.php">Device List</a></li>
                 <li><a href="javascript:avoid(0)">Add New</a></li>
             </ul>
         </div>

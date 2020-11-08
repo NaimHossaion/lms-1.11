@@ -14,7 +14,7 @@
     <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
     <div class="row animated fadeInUp">
         <div class="col-sm-12">
-            <h4 class="section-subtitle"><b>Device List</b></h4>
+            <h4 class="section-subtitle"><b>Device </b>List <a href="device_add.php"><span class="badge x-o x-primary"><i class="fa fa-plus"></i> Add New</span></a></h4>
             <div class="panel">
                 <div class="panel-content">
                     <div class="table-responsive">
@@ -54,10 +54,10 @@
 
 
 <?php
-$result = mysqli_query($con, "SELECT * FROM vendor_list");
+$result = mysqli_query($con, "SELECT * FROM device_model_list");
 while ($row = mysqli_fetch_assoc($result)){
 $Ref_ID = $row['Ref_ID'];
-$Vendor_Details = mysqli_query($con, "SELECT * FROM vendor_list WHERE Ref_ID ='$Ref_ID'");
+$Vendor_Details = mysqli_query($con, "SELECT * FROM device_model_list WHERE Ref_ID ='$Ref_ID'");
 $Vendor_Details_Row = mysqli_fetch_assoc($Vendor_Details);
 ?>
 
@@ -76,51 +76,27 @@ $Vendor_Details_Row = mysqli_fetch_assoc($Vendor_Details);
                                 <div class="col-md-12">
                                     <form class="form-horizontal" method="post" action="">
                                         <div class="form-group">
-                                            <label for="email2" class="col-sm-4 control-label">Vendor_Name</label>
+                                            <label for="Device_Catagory" class="col-sm-4 control-label">Device_Catagory</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="Incident" class="form-control" id="email2" placeholder="Incident Number" value="<?= $Vendor_Details_Row['Vendor_Name'] ?>" required>
-                                                <input type="hidden" name="Ref_ID" class="form-control" value="<?= $Vendor_Details_Row['Ref_ID'] ?>" required>
+                                                <input type="text" name="Device_Catagory" class="form-control" id="Device_Catagory" placeholder="Device_Catagory" value="<?= $Vendor_Details_Row['Device_Catagory'] ?>" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="Model_Name" class="col-sm-4 control-label">Contact_Person</label>
+                                            <label for="Device_Model" class="col-sm-4 control-label">Device_Model</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="Model_Name" class="form-control" id="Model_Name" placeholder="Model_Name" value="<?= $Vendor_Details_Row['Contact_Person'] ?>" required>
+                                                <input type="text" name="Device_Model" class="form-control" id="Device_Model" placeholder="Device_Model" value="<?= $Vendor_Details_Row['Device_Model'] ?>" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="Model_Name" class="col-sm-4 control-label">Email_ID</label>
+                                            <label for="Status" class="col-sm-4 control-label">Status</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="Model_Name" class="form-control" id="Model_Name" placeholder="Model_Name" value="<?= $Vendor_Details_Row['Email_ID'] ?>" required>
+                                                <input type="text" name="Status" class="form-control" id="Status" placeholder="Status" value="<?= $Vendor_Details_Row['Status'] ?>" required>
+                                                <!--<input type="text" name="Ref_ID" class="form-control" value="<?/*= $Vendor_Details_Row['Ref_ID'] */?>" required>-->
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="Model_Name" class="col-sm-4 control-label">Mobile_No</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" name="Model_Name" class="form-control" id="Model_Name" placeholder="Model_Name" value="<?= $Vendor_Details_Row['Mobile_No'] ?>" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="Model_Name" class="col-sm-4 control-label">Status</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" name="Model_Name" class="form-control" id="Model_Name" placeholder="Model_Name" value="<?= $Vendor_Details_Row['Status'] ?>" required>
-                                            </div>
-                                        </div>
-                                        <!-- Example options
-                                        <div class="form-group">
-                                            <label for="email2" class="col-sm-4 control-label">Vendor_Name</label>
-                                            <div class="col-sm-8">
-                                                <select name="Vendor_Name" id="email2" class="form-control" style="width: 100%">
-                                                    <option value="" label=""></option>
-                                                    <option value="SMS System" label="SMS System">SMS System</option>
-                                                    <option value="Thakral" label="Thakral">Thakral</option>
-                                                    <option value="Pakiza" label="Pakiza">Pakiza</option>
-                                                </select>
-                                            </div>
-                                        </div> -->
                                         <div class="form-group">
                                             <div class="col-sm-offset-2 col-sm-10">
-                                                <button type="submit" name="Incident_Update" class="btn btn-primary"><i class="fa fa-save"></i> Update</button>
+                                                <button type="submit" name="add_device" class="btn btn-primary"><i class="fa fa-save"></i> Update</button>
                                             </div>
                                         </div>
                                     </form>
@@ -134,21 +110,16 @@ $Vendor_Details_Row = mysqli_fetch_assoc($Vendor_Details);
     <?php
 }
 
-//error_reporting(0);
+error_reporting(0);
 
-if(isset($_POST['Incident_Update'])){
-    $Ref_ID = $_POST['Ref_ID'];
-    $Vendor_Name = $_POST['Vendor_Name'];
-    $Contact_Person = $_POST['Contact_Person'];
-    $Email_ID = $_POST['Email_ID'];
-    $Mobile_No = $_POST['Mobile_No'];;
+if(isset($_POST['add_device'])){
+    $Device_Catagory = $_POST['Device_Catagory'];
+    $Device_Model = $_POST['Device_Model'];
 
+    $result = mysqli_query($con,"UPDATE `device_model_list` SET `Device_Catagory`='$Device_Catagory',`Device_Model`='$Device_Model' WHERE `Ref_ID`= '$Ref_ID'");
 
-    $result = mysqli_query($con,"UPDATE `vendor_list` SET `Vendor_Name`= '$Vendor_Name',`Contact_Person`= '$Contact_Person',`Email_ID`= '$Email_ID',`Mobile_No`= '$Mobile_No',`Status`= '0' WHERE Ref_ID ='$Ref_ID'");
-    if ($result){
-        header('location: vendor_list_page.php');
-    }
 }
+
 ?>
 
 <?php require_once 'footer.php'; ?>
