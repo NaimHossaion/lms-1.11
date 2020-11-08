@@ -23,7 +23,7 @@
                             <!--BOX Style 1-->
                             <div class="col-sm-6 col-md-4 col-lg-3">
                                 <div class="panel widgetbox wbox-1 bg-lighter-2 color-light">
-                                    <a href="warranty_claim_page.php">
+                                    <a href="warranty_claim_pending.php">
                                         <div class="panel-content">
                                             <h1 class="title color-darker-2"> <i class="fa fa-exclamation-triangle"></i> <?= $total_claims; ?> </h1>
                                             <h4 class="subtitle color-darker-1">Warranty Claim </h4>

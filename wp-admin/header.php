@@ -136,14 +136,8 @@ $users_info = mysqli_fetch_assoc($data);
                             <li class="<?= $page == '650va_ups_repair.php' ? 'active-item':'' ?>"><a href="650va_ups_repair.php"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span>650VA UPS Repair</span></a></li>
                             <li class="<?= $page == 'officer_page.php' ? 'active-item':'' ?>"><a href="officer_page.php"><i class="fa fa-user" aria-hidden="true"></i><span>Officer List</span></a></li>
                             <li class="<?= $page == 'user_status_page.php' ? 'active-item':'' ?>"><a href="user_status_page.php"><i class="fa fa-group" aria-hidden="true"></i><span>User Status</span></a></li>
+                            <li class="<?= $page == 'vendor_list.php' ? 'active-item':'' ?>"><a href="vendor_list.php"><i class="fa fa-wrench" aria-hidden="true"></i><span>Vendor List</span></a></li>
 
-                            <li class="has-child-item close-item <?= $page == 'vendor_list_page.php' ? 'open-item':'' ?><?= $page == 'vendor_list_add.php' ? 'open-item':'' ?>">
-                                <a><i class="fa fa-exclamation-circle" aria-hidden="true"></i><span>Vendor List</span></a>
-                                <ul class="nav child-nav level-1">
-                                    <li class="<?= $page == 'vendor_list_add.php' ? 'active-item':'' ?>"><a href="vendor_list_add.php"><i class="fa fa-plus" aria-hidden="true"></i><span>Add Vendor</span></a></li>
-                                    <li class="<?= $page == 'vendor_list_page.php' ? 'active-item':'' ?>"><a href="vendor_list_page.php"><i class="fa fa-laptop" aria-hidden="true"></i><span>Vendor List</span></a></li>
-                                </ul>
-                            </li>
                             <li class="has-child-item close-item <?= $page == 'inventory_laptop_branch.php' ? 'open-item':'' ?><?= $page == 'inventory_page.php' ? 'open-item':'' ?><?= $page == 'online_ups_page.php' ? 'open-item':'' ?>">
                                 <a><i class="fa fa-deviantart" aria-hidden="true"></i><span>Inventory</span></a>
                                 <ul class="nav child-nav level-1">
