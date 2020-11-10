@@ -2,16 +2,15 @@
 require_once 'header.php';
 require_once 'dbcon.php';
 
-$Ref_ID= $_GET['Ref_ID'];
+if(isset($_GET['Ref_ID'])){
+    $Ref_ID = $_GET['Ref_ID'];
+}else{
+    $Ref_ID = "No ID Found";
+}
+
 $Details = mysqli_query($con, "SELECT * FROM device_model_list WHERE Ref_ID ='$Ref_ID'");
 $Details_Row = mysqli_fetch_assoc($Details);
 error_reporting(0);
-
-if (isset($_POST['update_device'])) {
-    $Device_Catagory = $_POST['Device_Catagory'];
-    $Device_Model = $_POST['Device_Model'];
-    $Status = $_POST['Status'];
-}
 ?>
 
     <!-- content HEADER -->
@@ -90,12 +89,17 @@ if (isset($_POST['update_device'])) {
         </div>
     </div>
 <?php
-  //  }
+
+if (isset($_POST['update_device'])) {
+    $Device_Catagory = $_POST['Device_Catagory'];
+    $Device_Model = $_POST['Device_Model'];
+    $Status = $_POST['Status'];
+
+    mysqli_query($con,"UPDATE `device_model_list` SET `Device_Catagory`='$Device_Catagory',`Device_Model`='$Device_Model',`Status`='$Status' WHERE `Ref_ID` = '$Ref_ID'");
+}
 ?>
 
 <?php
-
-
 
 ?>
 <?php require_once 'footer.php'; ?>
