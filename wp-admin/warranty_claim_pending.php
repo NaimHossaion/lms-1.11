@@ -15,7 +15,10 @@
     <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
     <div class="row animated fadeInUp">
         <div class="col-sm-12">
-            <h4 class="section-subtitle"><b>Warranty Status </b>Pending <a href="add_claim.php"><span class="badge x-o x-primary"><i class="fa fa-plus"></i> Add New</span></a></h4>
+            <h4 class="section-subtitle"><b>Warranty Status </b>Pending
+                <a href="add_claim.php"><span class="badge x-o x-primary"><i class="fa fa-plus"></i> Add New</span></a>
+                <a href="warranty_claim_pending.php"><span class="badge x-o x-warning"><i class="fa fa-exclamation"></i> Pending List</span></a>
+            </h4>
             <div class="panel">
                 <div class="panel-content">
                     <div class="table-responsive">
@@ -67,12 +70,12 @@ $result = mysqli_query($con, "SELECT * FROM warranty_claim");
 while ($row = mysqli_fetch_assoc($result)){
     ?>
     <!-- Modal -->
-    <div class="modal fade" id="Ref_ID-<?= $row['Ref_ID'] ?>" tabindex="-1" role="dialog" aria-labelledby="modal-info-label">
-        <div class="modal-dialog" role="document">
+    <div class="modal fade" id="Ref_ID-<?= $row['Ref_ID'] ?>" tabindex="-1" role="dialog" aria-labelledby="modal-large-label">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <div class="modal-header state modal-info">
+                <div class="modal-header state modal-primary">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="modal-info-label"><i class="fa fa-info-circle"></i>Item Details</h4>
+                    <h4 class="modal-title" id="modal-large-label"><i class="fa fa-info-circle"></i>Item Details</h4>
                 </div>
                 <div class="modal-body">
                     <table class="table table-bordered">

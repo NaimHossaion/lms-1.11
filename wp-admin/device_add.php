@@ -4,11 +4,11 @@ require_once 'dbcon.php';
 error_reporting(0);
 
 if(isset($_POST['add_device'])){
-    $Device_Catagory = $_POST['Device_Catagory'];
+    $Device_Category = $_POST['Device_Category'];
     $Device_Model = $_POST['Device_Model'];
 
-    $result = mysqli_query($con,"INSERT INTO device_model_list(Device_Catagory, Device_Model, Status) 
-                VALUES ('$Device_Catagory', '$Device_Model', '1')");
+    $result = mysqli_query($con,"INSERT INTO device_model_list(Device_Category, Device_Model, Status) 
+                VALUES ('$Device_Category', '$Device_Model', '1')");
     if ($result){
         $success = "Device: $Device_Model has been added successfully!";
     }else {
@@ -64,9 +64,9 @@ if(isset($_POST['add_device'])){
                             <form class="form-horizontal" method="POST" action="<?= $_SERVER['PHP_SELF'] ?>">
                                 <h5 class="mb-lg">Add New Device</h5>
                                 <div class="form-group">
-                                    <label for="Device_Catagory" class="col-sm-4 control-label">Device_Catagory</label>
+                                    <label for="Device_Category" class="col-sm-4 control-label">Device_Category</label>
                                     <div class="col-sm-8">
-                                        <select name="Device_Catagory" id="Device_Catagory" class="form-control" style="width: 100%">
+                                        <select name="Device_Category" id="Device_Category" class="form-control" style="width: 100%">
                                             <option value="" disabled selected hidden>Choose Vendor Name</option>
                                             <option value="Desktop">Desktop</option>
                                             <option value="Laptop">Laptop</option>
