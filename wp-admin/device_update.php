@@ -10,7 +10,9 @@ if(isset($_GET['Ref_ID'])){
 
 $Details = mysqli_query($con, "SELECT * FROM device_model_list WHERE Ref_ID ='$Ref_ID'");
 $Details_Row = mysqli_fetch_assoc($Details);
-error_reporting(0);
+
+
+
 ?>
 
     <!-- content HEADER -->
@@ -61,6 +63,7 @@ error_reporting(0);
                                     <label for="Device_Catagory" class="col-sm-4 control-label">Device_Catagory</label>
                                     <div class="col-sm-8">
                                         <input type="text" name="Device_Catagory" class="form-control" id="Status" placeholder="Device_Catagory" value="<?= $Details_Row['Device_Catagory'] ?>" required>
+                                        <input type="hidden" name="Ref_ID" class="form-control" id="Ref_ID" placeholder="Ref_ID" value="<?= $Details_Row['Ref_ID'] ?>" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -89,14 +92,20 @@ error_reporting(0);
         </div>
     </div>
 <?php
-
+error_reporting(0);
 if (isset($_POST['update_device'])) {
     $Device_Catagory = $_POST['Device_Catagory'];
+    $Ref_ID = $_POST['Ref_ID'];
     $Device_Model = $_POST['Device_Model'];
     $Status = $_POST['Status'];
 
-    mysqli_query($con,"UPDATE `device_model_list` SET `Device_Catagory`='$Device_Catagory',`Device_Model`='$Device_Model',`Status`='$Status' WHERE `Ref_ID` = '$Ref_ID'");
+    mysqli_query($con,"UPDATE device_model_list SET Device_Catagory ='$Device_Catagory', Device_Model ='$Device_Model', Status ='$Status' WHERE  Ref_ID = '$Ref_ID'");
+   /* if ($result){
+        header('location: device_list.php');
+    }*/
+
 }
+
 ?>
 
 <?php
