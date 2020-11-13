@@ -17,7 +17,7 @@
         <div class="col-sm-12">
             <h4 class="section-subtitle"><b>Warranty Status </b>Pending
                 <a href="add_claim.php"><span class="badge x-o x-primary"><i class="fa fa-plus"></i> Add New</span></a>
-                <a href="warranty_claim_pending.php"><span class="badge x-o x-warning"><i class="fa fa-exclamation"></i> Pending List</span></a>
+                <a href="warranty_claim_page.php"><span class="badge x-darker-1"><i class="fa fa-bars"></i> List All Claim</span></a>
             </h4>
             <div class="panel">
                 <div class="panel-content">
