@@ -15,7 +15,7 @@
     <div class="row animated fadeInUp">
         <div class="col-sm-12">
             <h4 class="section-subtitle"><b>Hardware Repair </b>Status
-                <a href=""><span class="badge x-o x-primary"><i class="fa fa-plus"></i> Add New</span></a>
+                <a href="hardware_repair_add.php"><span class="badge x-o x-primary"><i class="fa fa-plus"></i> Add New</span></a>
                 <a href=""><span class="badge x-o x-warning"><i class="fa fa-exclamation"></i> Pending List</span></a>
             </h4>
             <div class="panel">

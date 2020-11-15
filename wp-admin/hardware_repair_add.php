@@ -71,7 +71,7 @@ if(isset($_POST['add_device'])){
                                 <div class="form-group">
                                     <label for="follow" class="col-sm-4 control-label">follow</label>
                                     <div class="col-sm-8">
-                                        <input type="text" name="follow" class="form-control" id="placeholder" placeholder="follow">
+                                        <input type="text" name="follow" class="form-control" id="placeholder" placeholder="follow" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -107,7 +107,7 @@ if(isset($_POST['add_device'])){
                                 <div class="form-group">
                                     <div class="col-sm-offset-4 col-sm-8">
                                         <button type="submit" class="btn btn-primary" name="add_device">Submit</button>
-                                        <button class="btn" onclick="document.location='hardware_repair.php'">Cancel</button>
+                                        <button onclick="window.location.href='hardware_repair.php'" class="btn">Cancel</button>
                                     </div>
                                 </div>
                             </form>
