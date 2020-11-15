@@ -107,7 +107,7 @@ if(isset($_POST['add_device'])){
                                 <div class="form-group">
                                     <div class="col-sm-offset-4 col-sm-8">
                                         <button type="submit" class="btn btn-primary" name="add_device">Submit</button>
-                                        <button onclick="window.location.href='hardware_repair.php'" class="btn">Cancel</button>
+                                        <a href="hardware_repair.php" class="btn btn-default">Cancel</a>
                                     </div>
                                 </div>
                             </form>

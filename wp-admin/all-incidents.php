@@ -39,7 +39,7 @@
                                     <td><?= $row['Remarks'] ?></td>
                                     <td><?= $row['Status'] == 1 ? 'Active' : 'Inactive' ?></td>
                                     <td>
-                                        <a href="javascript:avoid(0)" data-toggle="modal" data-target="#Ref_ID-<?= $row['Ref_ID'] ?>"<i class="fa fa-eye"></i>&nbsp;</a>
+                                        <a href="" data-toggle="modal" data-target="#Ref_ID-<?= $row['Ref_ID'] ?>"<i class="fa fa-eye" data-toggle="tooltip" title="View"></i>&nbsp;</a>
                                         <a href="" data-toggle="modal" data-target="#Incident_Update-<?= $row['Ref_ID'] ?>"><i class="fa fa-pencil" data-toggle="tooltip" title="Edit"></i>&nbsp;</a>
                                         <a href="delete.php?DeleteIncident=<?= base64_encode($row ['Ref_ID']) ?>" onclick="return confirm('Are you sure to delete this item?')"><i class="fa fa-trash-o" data-toggle="tooltip" title="Delete"></i>&nbsp;</a>
                                     </td>
@@ -125,7 +125,7 @@ while ($row = mysqli_fetch_assoc($result)){
                                             <div class="col-sm-5">
                                                 <div class="input-group">
                                                     <span class="input-group-addon x-primary"><i class="fa fa-calendar"></i></span>
-                                                    <input type="date" name="Date" class="form-control" id="default-datepicker" value="<?= $Incident_Details_Row['Date'] ?>" required>
+                                                    <input type="date" name="Date" class="form-control" value="<?= $Incident_Details_Row['Date'] ?>" readonly="readonly">
                                                 </div>
                                             </div>
                                         </div>

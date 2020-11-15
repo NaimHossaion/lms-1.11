@@ -31,7 +31,7 @@ if(isset($_POST['add_claim'])){
         <div class="leftside-content-header">
             <ul class="breadcrumbs">
                 <li><i class="fa fa-home" aria-hidden="true"></i><a href="index.php">Dashboard</a></li>
-                <li><a href="add-claim.php">Add Claim</a></li>
+                <li><a href="javascript:avoid(0)">Add Claim</a></li>
             </ul>
         </div>
     </div>
