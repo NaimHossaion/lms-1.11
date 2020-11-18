@@ -1,7 +1,7 @@
 <?php
 require_once 'header.php';
 require_once 'dbcon.php';
-
+error_reporting(0);
 if(isset($_POST['add_item'])){
     $Incident = $_POST['Incident'];
     $Location = $_POST['Location'];
@@ -88,21 +88,33 @@ if(isset($_POST['add_item'])){
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="password2" class="col-sm-4 control-label">UPS_Brand</label>
+                                    <label for="UPS_Brand" class="col-sm-4 control-label">UPS_Brand</label>
                                     <div class="col-sm-8">
-                                        <input type="text" name="UPS_Brand" class="form-control" id="password2" placeholder="Asset Tag">
+                                        <select name="UPS_Brand" id="UPS_Brand" class="form-control" style="width: 100%">
+                                            <option value="" disabled selected hidden>Choose UPS Brand</option>
+                                            <option value="APOLLO">APOLLO</option>
+                                            <option value="Kehua Tech">Kehua Tech</option>
+                                            <option value="SOCOMEC">SOCOMEC</option>
+                                            <option value="UNICOL">UNICOL</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="password2" class="col-sm-4 control-label">UPS_Capacity</label>
+                                    <label for="UPS_Capacity" class="col-sm-4 control-label">UPS_Capacity</label>
                                     <div class="col-sm-8">
-                                        <input type="text" name="UPS_Capacity" class="form-control" id="password2" placeholder="User Name">
+                                        <select name="UPS_Capacity" id="UPS_Capacity" class="form-control" style="width: 100%">
+                                            <option value="" disabled selected hidden>Choose UPS Capacity</option>
+                                            <option value="3KVA Long">3KVA Long</option>
+                                            <option value="3KVA Standard">3KVA Standard</option>
+                                            <option value="1KVA Long">1KVA Long</option>
+                                            <option value="1KVA Standard">1KVA Standard</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="password2" class="col-sm-4 control-label">UPS_Serial</label>
                                     <div class="col-sm-8">
-                                        <input type="text" name="UPS_Serial" class="form-control" id="password2" placeholder="Department">
+                                        <input type="text" name="UPS_Serial" class="form-control" id="password2" placeholder="UPS_Serial">
                                     </div>
                                 </div>
                                 <div class="form-group">
