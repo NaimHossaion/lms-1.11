@@ -14,7 +14,10 @@
     <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
     <div class="row animated fadeInUp">
         <div class="col-sm-12">
-            <h4 class="section-subtitle"><b>3KVA UPS Repair </b><a href="3kva_ups_repair_add.php"><span class="badge x-o x-primary"><i class="fa fa-plus"></i> Add New</span></a></h4>
+            <h4 class="section-subtitle"><b>Online UPS </b>Repair
+                <a href="3kva_ups_repair_add.php"><span class="badge x-o x-primary"><i class="fa fa-plus"></i> Add New</span></a>
+                <a href="<?= $_SERVER['PHP_SELF'] ?>"><span class="badge x-primary"><i class="fa fa-refresh"></i> Refresh</span></a>
+            </h4>
 
             <div class="panel">
                 <div class="panel-content">

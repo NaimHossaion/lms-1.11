@@ -31,6 +31,7 @@ if(isset($_POST['add_claim'])){
         <div class="leftside-content-header">
             <ul class="breadcrumbs">
                 <li><i class="fa fa-home" aria-hidden="true"></i><a href="index.php">Dashboard</a></li>
+                <li><a href="warranty_claim_page.php">Warranty Status</a></li>
                 <li><a href="javascript:avoid(0)">Add Claim</a></li>
             </ul>
         </div>
@@ -133,7 +134,7 @@ if(isset($_POST['add_claim'])){
                                 <div class="form-group">
                                     <div class="col-sm-offset-4 col-sm-8">
                                         <button type="submit" class="btn btn-primary" name="add_claim">Submit</button>
-                                        <button class="btn" onclick="document.location='warranty_claim_page.php'">Cancel</button>
+                                        <a href="warranty_claim_page.php" class="btn btn-default">Cancel</a>
                                     </div>
                                 </div>
                             </form>

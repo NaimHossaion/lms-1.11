@@ -17,6 +17,7 @@
             <h4 class="section-subtitle"><b>Warranty Status </b>Pending
                 <a href="add_claim.php"><span class="badge x-o x-primary"><i class="fa fa-plus"></i> Add New</span></a>
                 <a href="warranty_claim_pending.php"><span class="badge x-o x-warning"><i class="fa fa-exclamation"></i> Pending List</span></a>
+                <a href="<?= $_SERVER['PHP_SELF'] ?>"><span class="badge x-primary"><i class="fa fa-refresh"></i> Refresh</span></a>
             </h4>
             <div class="panel">
                 <div class="panel-content">

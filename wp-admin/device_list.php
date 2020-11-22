@@ -14,7 +14,10 @@
     <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
     <div class="row animated fadeInUp">
         <div class="col-sm-12">
-            <h4 class="section-subtitle"><b>Device </b>List <a href="device_add.php"><span class="badge x-o x-primary"><i class="fa fa-plus"></i> Add New</span></a></h4>
+            <h4 class="section-subtitle"><b>Device </b>List
+                <a href="device_add.php"><span class="badge x-o x-primary"><i class="fa fa-plus"></i> Add New</span></a>
+                <a href="<?= $_SERVER['PHP_SELF'] ?>"><span class="badge x-primary"><i class="fa fa-refresh"></i> Refresh</span></a>
+            </h4>
             <div class="panel">
                 <div class="panel-content">
                     <div class="table-responsive">
@@ -77,7 +80,7 @@ while ($row = mysqli_fetch_assoc($result)){
                                         <div class="form-group">
                                             <label for="Device_Category" class="col-sm-4 control-label">Device_Category</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="Device_Category" class="form-control" id="Status" placeholder="Device_Category" value="<?= $Details_Row['Device_Category'] ?>" required>
+                                                <input type="text" name="Device_Category" class="form-control" id="Device_Category" placeholder="Device_Category" value="<?= $Details_Row['Device_Category'] ?>" required readonly="readonly">
                                                 <input type="hidden" name="Ref_ID" class="form-control" id="Ref_ID" placeholder="Ref_ID" value="<?= $Details_Row['Ref_ID'] ?>" required>
                                             </div>
                                         </div>

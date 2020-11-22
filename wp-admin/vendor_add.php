@@ -93,7 +93,7 @@ if(isset($_POST['add_vendor'])){
                                 <div class="form-group">
                                     <div class="col-sm-offset-4 col-sm-8">
                                         <button type="submit" class="btn btn-primary" name="add_vendor">Submit</button>
-                                        <button class="btn" onclick="document.location='vendor_list_page.php'">Cancel</button>
+                                        <a href="vendor_list_page.php" class="btn btn-default">Cancel</a>
                                     </div>
                                 </div>
                             </form>
