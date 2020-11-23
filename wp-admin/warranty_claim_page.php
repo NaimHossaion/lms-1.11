@@ -124,7 +124,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="default-datepicker" class="col-sm-4 control-label ">Date</label>
-                                            <div class="col-sm-5">
+                                            <div class="col-sm-4">
                                                 <div class="input-group">
                                                     <span class="input-group-addon x-primary"><i class="fa fa-calendar"></i></span>
                                                     <input type="date" name="Sending_Date" class="form-control" id="default-datepicker" value="<?= $Incident_Details_Row['Sending_Date'] ?>" required>
@@ -144,7 +144,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <div class="col-sm-offset-2 col-sm-10">
+                                            <div class="col-sm-offset-4 col-sm-10">
                                                 <button type="submit" name="Incident_Update" class="btn btn-primary"><i class="fa fa-save"></i> Update</button>
                                             </div>
                                         </div>
