@@ -40,7 +40,6 @@
                                     <td><?= $row['Device_Model'] ?></td>
                                     <td><?= $row['Status'] == 1 ? '<span class="badge badge-xs x-success">Active</span>' : '<span class="badge badge-xs x-warning">Inactive</span>' ?></td>
                                     <td>
-                                        <!--<a href="device_update.php?Ref_ID=<?/*= $row['Ref_ID'] */?>"><i class="fa fa-pencil-square-o"> Edit </i></a>-->
                                         <a href="" data-toggle="modal" data-target="#Incident_Update-<?= $row['Ref_ID'] ?>"<i class="fa fa-pencil-square-o"> Edit </i></a>
                                     </td>
                                 </tr>

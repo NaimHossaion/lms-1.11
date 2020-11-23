@@ -106,9 +106,12 @@ if(isset($_POST['add_claim'])){
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="default-datepicker" class="col-sm-4 control-label ">Mailing Date</label>
+                                    <label class="col-sm-4 control-label">Sending_Date</label>
                                     <div class="col-sm-5">
-                                        <input type="date" name="Mailing_Date" class="form-control" id="default-datepicker" required>
+                                        <div class="input-group">
+                                            <span class="input-group-addon x-primary"><i class="fa fa-calendar"></i></span>
+                                            <input type="date" name="Mailing_Date" class="form-control" required>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
