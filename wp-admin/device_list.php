@@ -24,8 +24,8 @@
                         <table id="basic-table" class="data-table table table-striped nowrap table-hover" cellspacing="0" width="100%">
                             <thead>
                             <tr>
-                                <th>Device_Category</th>
-                                <th>Device_Model</th>
+                                <th>Device Category</th>
+                                <th>Device Model</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -96,8 +96,9 @@ while ($row = mysqli_fetch_assoc($result)){
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <div class="col-sm-offset-2 col-sm-10">
+                                            <div class="col-sm-offset-4 col-sm-10">
                                                 <button type="submit" name="update_device" class="btn btn-primary"><i class="fa fa-save"></i> Update</button>
+                                                <a href="device_list.php" class="btn btn-default">Cancel</a>
                                             </div>
                                         </div>
                                     </form>

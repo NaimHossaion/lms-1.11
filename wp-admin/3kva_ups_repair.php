@@ -87,15 +87,22 @@
                                 <div class="col-md-12">
                                     <form class="form-horizontal" method="post" action="">
                                         <div class="form-group">
+                                            <label for="Incident" class="col-sm-4 control-label">Incident</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="Incident" class="form-control" id="Incident" value="<?= $Incident_Details_Row['Incident'] ?>" required>
+                                                <input type="hidden" name="Ref_ID" class="form-control" id="Ref_ID" value="<?= $Incident_Details_Row['Ref_ID'] ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
                                             <label for="Location" class="col-sm-4 control-label">Location</label>
                                             <div class="col-sm-8">
                                                 <input type="text" name="Location" class="form-control" id="Location" value="<?= $Incident_Details_Row['Location'] ?>" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="Vendor_Name" class="col-sm-4 control-label">Vendor_Name</label>
+                                            <label for="UPS_Model" class="col-sm-4 control-label">UPS_Model</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="Vendor_Name" class="form-control" id="Vendor_Name" value="<?= $Incident_Details_Row['Vendor_Name'] ?>" required>
+                                                <input type="text" name="UPS_Model" class="form-control" id="UPS_Model" value="<?= $Incident_Details_Row['UPS_Model'] ?>" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -105,8 +112,51 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
+                                            <label for="UPS_Capacity" class="col-sm-4 control-label">UPS_Capacity</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="UPS_Capacity" class="form-control" id="UPS_Capacity" value="<?= $Incident_Details_Row['UPS_Capacity'] ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="UPS_Serial" class="col-sm-4 control-label">UPS_Serial</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="UPS_Serial" class="form-control" id="UPS_Serial" value="<?= $Incident_Details_Row['UPS_Serial'] ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Vendor_Name" class="col-sm-4 control-label">Vendor_Name</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="Vendor_Name" class="form-control" id="Vendor_Name" value="<?= $Incident_Details_Row['Vendor_Name'] ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Sending_Date" class="col-sm-4 control-label">Sending_Date</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="Sending_Date" class="form-control" id="Sending_Date" value="<?= $Incident_Details_Row['Sending_Date'] ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Return_Date" class="col-sm-4 control-label">Return_Date</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="Return_Date" class="form-control" id="Return_Date" value="<?= $Incident_Details_Row['Return_Date'] ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Repair_Status" class="col-sm-4 control-label">Repair_Status</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="Repair_Status" class="form-control" id="Repair_Status" value="<?= $Incident_Details_Row['Repair_Status'] ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Remarks" class="col-sm-4 control-label">Remarks</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="Remarks" class="form-control" id="Remarks" value="<?= $Incident_Details_Row['Remarks'] ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
                                             <div class="col-sm-offset-4 col-sm-10">
                                                 <button type="submit" name="Incident_Update" class="btn btn-primary"><i class="fa fa-save"></i> Update</button>
+                                                <a href="3kva_ups_repair.php" class="btn btn-default">Cancel</a>
                                             </div>
                                         </div>
                                     </form>
@@ -120,12 +170,24 @@
     </div>
     <?php
 }
-
+error_reporting(0);
 if(isset($_POST['Incident_Update'])){
+    $Ref_ID = $_POST['Ref_ID'];
+    $Incident = $_POST['Incident'];
     $Location = $_POST['Location'];
+    $UPS_Model = $_POST['UPS_Model'];
+    $UPS_Brand = $_POST['UPS_Brand'];
+    $UPS_Capacity = $_POST['UPS_Capacity'];
+    $UPS_Serial = $_POST['UPS_Serial'];
     $Vendor_Name = $_POST['Vendor_Name'];
+    $Sending_Date = $_POST['Sending_Date'];
+    $Return_Date = $_POST['Return_Date'];
+    $Repair_Status = $_POST['Repair_Status'];
+    $Remarks = $_POST['Remarks'];
 
-    $result = mysqli_query($con,"UPDATE `3kva_ups_repair` SET `Location`='$Location', `Vendor_Name`='$Vendor_Name' WHERE `Ref_ID` = '$Ref_ID'");
+
+
+    $result = mysqli_query($con,"UPDATE 3kva_ups_repair SET Incident ='$Incident', Location ='$Location', UPS_Model ='$UPS_Model', UPS_Brand ='$UPS_Brand', UPS_Capacity ='$UPS_Capacity', UPS_Serial ='$UPS_Serial', Vendor_Name ='$Vendor_Name', Sending_Date ='$Sending_Date', Return_Date ='$Return_Date', Repair_Status ='$Repair_Status', Remarks ='$Remarks' WHERE  Ref_ID = '$Ref_ID'");
     if ($result){
         header('location: 3kva_ups_repair.php');
     }

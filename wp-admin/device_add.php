@@ -6,9 +6,10 @@ error_reporting(0);
 if(isset($_POST['add_device'])){
     $Device_Category = $_POST['Device_Category'];
     $Device_Model = $_POST['Device_Model'];
+    $Entry_By = $_SESSION['user_login_username'];
 
-    $result = mysqli_query($con,"INSERT INTO device_model_list(Device_Category, Device_Model, Status) 
-                VALUES ('$Device_Category', '$Device_Model', '1')");
+    $result = mysqli_query($con,"INSERT INTO device_model_list(Device_Category, Device_Model, Status, Entry_By) 
+                VALUES ('$Device_Category', '$Device_Model', '1', '$Entry_By')");
     if ($result){
         $success = "Device: $Device_Model has been added successfully!";
     }else {
@@ -64,10 +65,10 @@ if(isset($_POST['add_device'])){
                             <form class="form-horizontal" method="POST" action="<?= $_SERVER['PHP_SELF'] ?>">
                                 <h5 class="mb-lg">Add New Device</h5>
                                 <div class="form-group">
-                                    <label for="Device_Category" class="col-sm-4 control-label">Device_Category</label>
+                                    <label for="Device_Category" class="col-sm-4 control-label">Device Category</label>
                                     <div class="col-sm-8">
                                         <select name="Device_Category" id="Device_Category" class="form-control" style="width: 100%">
-                                            <option value="" disabled selected hidden>Choose Vendor Name</option>
+                                            <option value="" disabled selected hidden>Choose Device Name</option>
                                             <option value="Desktop">Desktop</option>
                                             <option value="Laptop">Laptop</option>
                                             <option value="Online UPS">Online UPS</option>
@@ -78,7 +79,7 @@ if(isset($_POST['add_device'])){
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="Device_Model" class="col-sm-4 control-label">Device_Model</label>
+                                    <label for="Device_Model" class="col-sm-4 control-label">Device Model</label>
                                     <div class="col-sm-8">
                                         <input type="text" name="Device_Model" class="form-control" id="placeholder" placeholder="Device Model Name">
                                     </div>
