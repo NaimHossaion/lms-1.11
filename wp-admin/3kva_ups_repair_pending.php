@@ -7,7 +7,8 @@
         <div class="leftside-content-header">
             <ul class="breadcrumbs">
                 <li><i class="fa fa-home" aria-hidden="true"></i><a href="index.php">Dashboard</a></li>
-                <li><a href="javascript:avoid(0)">3KVA UPS Repair</a></li>
+                <li><a href="3kva_ups_repair.php">3KVA UPS Repair</a></li>
+                <li><a href="javascript:avoid(0)">3KVA UPS Repair Pending</a></li>
             </ul>
         </div>
     </div>
@@ -16,7 +17,7 @@
         <div class="col-sm-12">
             <h4 class="section-subtitle"><b>Online UPS </b>Repair
                 <a href="3kva_ups_repair_add.php"><span class="badge x-o x-primary"><i class="fa fa-plus"></i> Add New</span></a>
-                <a href="3kva_ups_repair_pending.php"><span class="badge x-warning"><i class="fa fa-exclamation"></i> Pending List</span></a>
+                <a href="3kva_ups_repair.php"><span class="badge x-darker-1"><i class="fa fa-bars"></i> List All Repair</span></a>
                 <a href="<?= $_SERVER['PHP_SELF'] ?>"><span class="badge x-primary"><i class="fa fa-refresh"></i> Refresh</span></a>
             </h4>
 
@@ -38,7 +39,7 @@
                             </thead>
                             <tbody>
                             <?php
-                            $result = mysqli_query($con, "SELECT * FROM 3kva_ups_repair");
+                            $result = mysqli_query($con, "SELECT * FROM 3kva_ups_repair WHERE Return_Date IS NULL");
                             while ($row = mysqli_fetch_assoc($result)){
                                 ?>
                                 <tr>
