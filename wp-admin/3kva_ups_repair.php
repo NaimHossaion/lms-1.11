@@ -26,14 +26,15 @@
                         <table id="basic-table" class="data-table table table-striped nowrap table-hover" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
+                                    <th>Action</th>
                                     <th>Location</th>
                                     <th>UPS_Brand</th>
+                                    <th>UPS_Model</th>
                                     <th>UPS_Capacity</th>
                                     <th>UPS_Serial</th>
                                     <th>Sending_Date</th>
                                     <th>Return_Date</th>
                                     <th>Repair_Status</th>
-                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -42,16 +43,17 @@
                             while ($row = mysqli_fetch_assoc($result)){
                                 ?>
                                 <tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#Incident_Update-<?= $row['Ref_ID'] ?>"<i class="fa fa-pencil-square-o"> Edit </i></a>
+                                    </td>
                                     <td><?= $row['Location'] ?></td>
                                     <td><?= $row['UPS_Brand'] ?></td>
+                                    <td><?= $row['UPS_Model'] ?></td>
                                     <td><?= $row['UPS_Capacity'] ?></td>
                                     <td><?= $row['UPS_Serial'] ?></td>
                                     <td><?= $row['Sending_Date'] ?></td>
                                     <td><?= $row['Return_Date'] ?></td>
-                                    <td><?= $row['Repair_Status'] ?></td>
-                                    <td>
-                                        <a href="" data-toggle="modal" data-target="#Incident_Update-<?= $row['Ref_ID'] ?>"<i class="fa fa-pencil-square-o"> Edit </i></a>
-                                    </td>
+                                    <td><?= $row['Repair_Status'] == NULL ? 'Pending' : 'Resolved' ?></td>
                                 </tr>
                                 <?php
                             }
