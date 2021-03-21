@@ -133,6 +133,7 @@ $users_info = mysqli_fetch_assoc($data);
                             </li>
                             <li class="<?= $page == 'warranty_claim_pending.php' ? 'active-item':'' ?>"><a href="warranty_claim_pending.php"><i class="fa fa-laptop" aria-hidden="true"></i><span>Warranty Claim</span></a></li>
                             <li class="<?= $page == '3kva_ups_repair_pending.php' ? 'active-item':'' ?>"><a href="3kva_ups_repair_pending.php"><i class="fa fa-power-off" aria-hidden="true"></i><span>3KVA UPS Repair</span></a></li>
+                            <li class="<?= $page == 'atm-issues-list.php' ? 'active-item':'' ?>"><a href="atm-issues-list.php"><i class="fa fa-bell" aria-hidden="true"></i><span>ATM Issues List</span></a></li>
                             <li class="<?= $page == '650va_ups_repair.php' ? 'active-item':'' ?>"><a href="650va_ups_repair.php"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span>650VA UPS Repair</span></a></li>
                             <li class="<?= $page == 'officer_page.php' ? 'active-item':'' ?>"><a href="officer_page.php"><i class="fa fa-user" aria-hidden="true"></i><span>Officer List</span></a></li>
                             <li class="<?= $page == 'user_status_page.php' ? 'active-item':'' ?>"><a href="user_status_page.php"><i class="fa fa-group" aria-hidden="true"></i><span>User Status</span></a></li>

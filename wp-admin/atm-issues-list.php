@@ -7,7 +7,7 @@
         <div class="leftside-content-header">
             <ul class="breadcrumbs">
                 <li><i class="fa fa-home" aria-hidden="true"></i><a href="index.php">Dashboard</a></li>
-                <li><a href="javascript:avoid(0)">3KVA UPS Repair</a></li>
+                <li><a href="javascript:avoid(0)">ATM Issues List</a></li>
                 <li>
                     <a href="javascript:avoid(0)"></a></li>
                 </li>
@@ -21,27 +21,25 @@
     <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
     <div class="row animated fadeInUp">
         <div class="col-sm-12">
-            <h4 class="section-subtitle"><b>Online UPS </b>Repair</h4>
+            <h4 class="section-subtitle"><b>ATM Issues </b>List</h4>
             <div class="panel">
                 <div class="panel-content">
                     <div class="table-responsive">
                         <table id="basic-table" class="data-table table table-striped nowrap table-hover" cellspacing="0" width="100%">
                             <thead>
-                                <tr>
-                                    <th>Action</th>
-                                    <th>Location</th>
-                                    <th>UPS_Brand</th>
-                                    <th>UPS_Model</th>
-                                    <th>UPS_Capacity</th>
-                                    <th>UPS_Serial</th>
-                                    <th>Sending_Date</th>
-                                    <th>Return_Date</th>
-                                    <th>Repair_Status</th>
-                                </tr>
+                            <tr>
+                                <th>Action</th>
+                                <th>Date</th>
+                                <th>Incident</th>
+                                <th>ATM-Location</th>
+                                <th>Problem-Description</th>
+                                <th>Remarks</th>
+                                <th>Status</th>
+                            </tr>
                             </thead>
                             <tbody>
                             <?php
-                            $result = mysqli_query($con, "SELECT * FROM 3kva_ups_repair");
+                            $result = mysqli_query($con, "SELECT * FROM atm-issues-list");
                             while ($row = mysqli_fetch_assoc($result)){
                                 ?>
                                 <tr>
@@ -71,8 +69,8 @@
 
     <!-- Modal for Edit or Update -->
 <?php
-    $result = mysqli_query($con, "SELECT * FROM 3kva_ups_repair");
-    while ($row = mysqli_fetch_assoc($result)){
+$result = mysqli_query($con, "SELECT * FROM 3kva_ups_repair");
+while ($row = mysqli_fetch_assoc($result)){
     $Ref_ID = $row['Ref_ID'];
     $Incident_Details = mysqli_query($con, "SELECT * FROM 3kva_ups_repair WHERE Ref_ID ='$Ref_ID'");
     $Incident_Details_Row = mysqli_fetch_assoc($Incident_Details);
